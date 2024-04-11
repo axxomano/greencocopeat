@@ -89,7 +89,7 @@
           <div class="col-lg-5">
             <form class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300" id="numberSubmit">
               <input type="tel" class="form-control" placeholder="Enter your contact Number">
-              <input type="submit" class="btn btn-primary" id="phone-to-email" value="Get a call">
+              <input type="button" class="btn btn-primary" id="phone-to-email" value="Get a call" onclick="sendEmail()">
             </form>
           </div>
         </div>
@@ -778,11 +778,10 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 
   <script type="text/javascript">
-   const token = "e2b8d5d2-cd2c-4b19-b292-db72965ff884";
-const $formContact = document.querySelector("#numberSubmit");
 
-const sendForm = event => {
-  event.preventDefault();
+//const $formContact = document.querySelector("#numberSubmit");
+
+function sendEmail() { 
   const currentdate = new Date();
   const datetime = `on Date & Time: ${currentdate.toLocaleString()}`;  // Use toLocaleString for formatting
 
@@ -790,23 +789,18 @@ const sendForm = event => {
     phone: document.querySelector("#phone-to-email").value,
     datetime: datetime  // Assign the variable value
   };
-  try {
-    Email.send(
-      "manocools@gmail.com",
-      "digitaldeliver@gmail.com",
-      "New phone Enquiry on gogreencocopeat website",
-      `${message.phone} enquired ${message.datetime}`,
-      { token }
-    ).then(message => alert(message))
-  } catch (e) {
-    console.error("Email sending error:", e);  // Better error logging
-    alert("An error occurred while sending the email. Please try again later.");
-  }
-};
+  Email.send({
+    SecureToken : "a01cf977-a155-49c3-9001-41b0de902882",
+    To : 'manocools@gmail.com',
+    From : "digitaldeliver@gmail.com",
+    Subject : "This is the subject",
+    Body : `${message.phone} enquired on ${message.datetime}`
+}).then(
+  message => alert(message)
+);
+        } 
+      </script> 
 
-$formContact.addEventListener("submit", sendForm);
-
-  </script>
 
 </body>
 
