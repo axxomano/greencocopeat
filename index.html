@@ -87,9 +87,9 @@
             <p data-aos="fade-up" data-aos-delay="200">Coco Peat is THE growing medium which proves to be the irreplaceable sustainable and eco friendly product of all time. </p>
           </div>
           <div class="col-lg-5">
-            <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
+            <form class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300" id="numberSubmit">
               <input type="tel" class="form-control" placeholder="Enter your contact Number">
-              <input type="submit" class="btn btn-primary" value="Get a call">
+              <input type="submit" class="btn btn-primary" id="phone-to-email" value="Get a call">
             </form>
           </div>
         </div>
@@ -347,7 +347,7 @@
               <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Premium grow bag</h4>
-                <p>Our 1 kg premium grow bag used for growing indoor plants</p>
+                <p>Our premium grow bag is used for growing multiple plants in a row</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
@@ -373,21 +373,21 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-growbags">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-slabs">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Durable grow bags</h4>
-                <p>Craft your garden beautifully with these perfect squared bags</p>
+                <h4>Coco Slabs for big growth! </h4>
+                <p>Align your garden beautifully with these coco slabs</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-growbags">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-blocks">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>All weather grow bags</h4>
-                <p>Articulate your garden with these space saving and robust grow bags</p>
+                <h4>Multiple size cocopeats</h4>
+                <p>Articulate your garden with the perfect sized cocopeats</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
@@ -427,7 +427,7 @@
               <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Nutrient rich garden</h4>
-                <p>Make your garden soil rich in nutrients with our 5 kg Cocopeat block</p>
+                <p>Make your garden soil rich in nutrients with our coco bricks</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
@@ -532,6 +532,7 @@
                 <a href="#"><i class="bi bi-facebook"></i></a>
                 <a href="#"><i class="bi bi-instagram"></i></a> -->
                 <a href="https://www.linkedin.com/in/greencocopeat/"><i class="bi bi-linkedin"></i></a>
+                <a href="mailto:shiva@gogreencocopeat.com"><i class="bi bi-envelope"></i></a>
               </div>
             </div>
             <div class="member-info text-center">
@@ -630,6 +631,7 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                   <i class="bi bi-envelope"></i>
                   <h3>Email Us</h3>
+                  <p>shiva@gogreencocopeat.com</p>
                   <p>green_cocopeat@outlook.com</p>
                   <p>green_cocopeatexporter@outlook.com </p>
                 </div>
@@ -773,6 +775,38 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+  <script type="text/javascript">
+   const token = "e2b8d5d2-cd2c-4b19-b292-db72965ff884";
+const $formContact = document.querySelector("#numberSubmit");
+
+const sendForm = event => {
+  event.preventDefault();
+  const currentdate = new Date();
+  const datetime = `on Date & Time: ${currentdate.toLocaleString()}`;  // Use toLocaleString for formatting
+
+  const message = {
+    phone: document.querySelector("#phone-to-email").value,
+    datetime: datetime  // Assign the variable value
+  };
+  try {
+    Email.send(
+      "manocools@gmail.com",
+      "digitaldeliver@gmail.com",
+      "New phone Enquiry on gogreencocopeat website",
+      `${message.phone} enquired ${message.datetime}`,
+      { token }
+    ).then(message => alert(message))
+  } catch (e) {
+    console.error("Email sending error:", e);  // Better error logging
+    alert("An error occurred while sending the email. Please try again later.");
+  }
+};
+
+$formContact.addEventListener("submit", sendForm);
+
+  </script>
 
 </body>
 
