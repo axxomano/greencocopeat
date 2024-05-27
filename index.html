@@ -1,844 +1,1045 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Green Coco Peat</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
-  <!--  Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-</head>
-<style type="text/css">
-  .float{
-    position: fixed;
-    width: 230px;
-    height: 38px;
-    bottom: 14px;
-    right: 90px;
-    background-color: var(--primary-color);
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 17px;
-    font-family: 'Open Sans';
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
-    font-weight: 600;
-}
-
- .float i{
-      font-size: 23px;
-}
-
-.my-float{
-  margin-top:16px;
-}
-
-.float:hover{
-color: #fff !important;
-  font-size: 18px;
-  background-color: #25d366;
-  opacity: 1;
-}
-
-</style>
-
-<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-
-      <a href="#" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img id="logo" class="img-fluid">
-        <!-- <h1>Green Coco Peat</h1> -->
-        <!-- <span>.</span> -->
-      </a>
-
-      <!-- Nav Menu -->
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li class="dropdown has-dropdown"><a href="#products"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
-            <ul class="dd-box-shadow">
-              <li><a href="#cocoblocks">Coco Blocks</a></li>
-              <li class="dropdown has-dropdown"><a href="#cocobricks"><span>Coco Bricks</span> <i class="bi bi-chevron-down"></i></a>
-                <ul class="dd-box-shadow">
-                  <li><a href="#cocobricks">Coco Bricks - 650 gm</a></li>
-                </ul>
-              </li>
-              <li><a href="#cocoslabs">Cocopeat Slabs</a></li>
-              <li><a href="#growbags">Grow Bags</a></li>
-            </ul>
-          </li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav><!-- End Nav Menu -->
-
-      <a class="btn-getstarted" href="#guide-download">Get Guide</a>
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- Hero Section - Home Page -->
-    <section id="home" class="hero">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
-
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10">
-            <h2 data-aos="fade-up" data-aos-delay="100">Welcome to the Sustainable future of Agriculture industry.</h2>
-            <p data-aos="fade-up" data-aos-delay="200">Coco Peat is THE growing medium which proves to be the irreplaceable sustainable and eco friendly product of all time. </p>
-          </div>
-          <div class="col-lg-5">
-            <form class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300" id="numberSubmit">
-              <input type="tel" class="form-control" placeholder="Enter your contact Number">
-              <input type="button" class="btn btn-success" id="phone-to-email" value="Get a call" onclick="sendEmail()">
-            </form>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- End Hero Section -->
-
-
-
-    <!-- About Section - Home Page -->
-    <section id="about" class="about">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-xl-center gy-5">
-
-          <div class="col-xl-5 content">
-            <h3>About Us</h3>
-            <h2> Coco Peat Pioneers: Transforming Agriculture Globally with Passion and Expertise</h2>
-            <p> We are a team of agricultural enthusiasts who loves and passionate about coco peat and its products rather than considering it as a business.With the best work experience in coco peat business, we believe we can make the vital change and revolution in agriculture and horticulture industry globally. 
-</p>
-            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-          </div>
-
-          <div class="col-xl-7">
-            <div class="row gy-4 icon-boxes">
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box">
-                  <i class="bi bi-buildings"></i>
-                  <h3>Coco Experts</h3>
-                  <p>We're experts revolutionizing coco peat with knowledge, passion, and a focus on agri-innovation</p>
+﻿<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title>Golden Crop - Exporting Agricultural products</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="ThemeZaa">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="description" content="Golden Crop - Exporting Agricultural products">
+        <!-- favicon icon -->
+        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <!-- google fonts preconnect -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- style sheets and font icons -->
+        <link rel="stylesheet" href="css/vendors.min.css"/>
+        <link rel="stylesheet" href="css/icon.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/responsive.css"/>
+        <link rel="stylesheet" href="demos/it-business/it-business.css" />
+    </head>
+    <body data-mobile-nav-style="full-screen-menu" data-mobile-nav-bg-color="#252840">  
+        <!-- start header -->
+        <header> 
+            <!-- start navigation -->
+            <nav class="navbar navbar-expand-lg header-transparent bg-transparent header-reverse glass-effect" data-header-hover="light">
+                <div class="container-fluid">
+                    <div class="col-auto col-xxl-3 col-lg-2 me-lg-0 me-auto">
+                        <a class="navbar-brand" href="demo-it-business.html">
+                            <img src="images/goldencrop-logo-white.png" data-at2x="images/goldencrop-logo-white@2x.png" alt="" class="default-logo">
+                            <img src="images/goldencrop-logo-green.png" data-at2x="images/goldencrop-logo-green@2x.png" alt="" class="alt-logo">
+                            <img src="images/goldencrop-logo-green.png" data-at2x="images/goldencrop-logo-green@2x.png" alt="" class="mobile-logo"> 
+                        </a>
+                    </div>
+                    <div class="col-auto col-xxl-6 col-lg-8 menu-order position-static">
+                        <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav"> 
+                             <ul class="navbar-nav"> 
+                                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                                <li class="nav-item"><a href="aboutus.html" class="nav-link">About</a></li> 
+                                <li class="nav-item dropdown dropdown-with-icon-style02">
+                                    <a  href="demo-it-business-services.html" class="nav-link">Services</a>
+                                    <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
+                                        <li><a href="export-services.html"><i class="bi bi-arrow-up-right-square"></i>Export Services</a></li>
+                                        <li><a href="import-services.html"><i class="bi bi-arrow-down-left-square"></i>Import  Services</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-sm-flex">
+                        <div class="header-icon">
+                            <div class="header-button"><a href="demo-it-business-contact.html" class="btn btn-large btn-transparent-white-light btn-rounded text-transform-none border-1">Make an enquiry<i class="fa-solid fa-arrow-right"></i></a></div>
+                        </div>  
+                    </div>
                 </div>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box">
-                  <i class="bi bi-globe2"></i>
-                  <h3>Global Suppliers</h3>
-<p>We are agri-innovation enthusiasts, dedicated to transforming agriculture globally through deep coco peat understanding.</p>
-                </div>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon-box">
-                  <i class="bi bi-trophy"></i>
-                  <h3>Recycling Champions</h3>
-<p> Our team is committed to environmental stewardship, revolutionizing cocopeats for sustainable agriculture</p>
-                </div>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="icon-box">
-                  <i class="bi bi-graph-up-arrow"></i>
-                  <h3>Sustainable Agriculture Advocates</h3>
-<p>We are sustainable agriculture advocates leading the way in transforming cocopeat with knowledge and passion</p>
-                </div>
-              </div> <!-- End Icon Box -->
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section><!-- End About Section -->
-
-
-
-    <!-- Services Section - Home Page -->
-    <section id="features" class="services">
-
-      <!--  Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Features</h2>
-        <p>Starting off with Cocopeat blocks, bricks and slabs, we intend to introduce & innovate more sustainable Cocopeat products for a green future in Agri & Horticulture industry. </p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-              <div>
-                <h4 class="title">Ultimate substrate for all plants</a></h4>
-                <p class="description">Optimal plant foundation with our Cocopeat blocks - the ultimate substrate for all plants.</p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-              <div>
-                <h4 class="title">100% organic</h4>
-                <p class="description">Embrace organic growth with our Cocopeat products, ensuring 100% organic solutions for your crops.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-recycle"></i></div>
-              <div>
-                <h4 class="title">Recycle-able</h4>
-                <p class="description">Choose sustainability with our Cocopeat products, designed to be recyclable for a greener agricultural future.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-globe-central-south-asia"></i></div>
-              <div>
-                <h4 class="title">Sustainable </h4>
-                <p class="description">Promote sustainable farming practices by using our Cocopeat, an eco-friendly solution for Agri & Horticulture.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
-              <div>
-                <h4 class="title">Nutrient contents for plants</h4>
-                <p class="description">Enhance plant health with our Cocopeat products, enriched with essential nutrient contents for thriving crops.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-droplet-half"></i></div>
-              <div>
-                <h4 class="title">Minimal water consumption</h4>
-                <p class="description">Conserve water resources with our Cocopeat, promoting minimal water consumption for efficient agricultural practices.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- End Services Section -->
-
-    <!-- Features Section - Home Page -->
-    <section id="products" class="features">
-
-      <!--  Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Products</h2>
-        <p>Our current products are crafted with passion and we also customise as per the customers’ requirements (eg: High EC, Low EC, Buffered etc) </p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4 align-items-center features-item" id="cocoblocks">
-          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <h3>Cocopeat Blocks - 5kg </h3>
-            <p>
-              Unleash the power of nature in your garden with our Cocoblocks. Weighing 5 kilograms, these substantial blocks of cocopeat are the ideal solution for robust and sustainable plant growth. Sourced from natural coconut fibers, Cocoblocks offer excellent water retention, aeration, and nutrient-holding capacity. Elevate your gardening experience with this eco-friendly substrate, ensuring your plants thrive in a healthy and organic environment. Choose Cocoblocks 5 kg for a greener, more sustainable approach to cultivating a flourishing garden.
-            </p>
-            <a href="#guide-download" class="btn btn-get-started">Know More</a>
-          </div>
-          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <div class="image-stack">
-              <img src="assets/img/features-light-1.jpg" alt="" class="stack-front">
-              <img src="assets/img/features-light-2.jpg" alt="" class="stack-back">
-            </div>
-          </div>
-        </div><!-- Features Item 2-->
-
-        <div class="row gy-4 align-items-stretch justify-content-between features-item" id="cocobricks">
-          <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
-            <img src="assets/img/features-light-3.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
-            <h3>Cocopeat Bricks - 650 grams</h3>
-            <p>Discover the essence of sustainable cultivation with our Cocopeat Bricks. Weighing just 650 grams, these compact blocks offer an eco-friendly and versatile solution for nurturing your plants. Derived from natural coconut fibers, our bricks serve as an optimal growing medium, providing essential aeration, moisture retention, and nutrient support. Elevate your gardening experience with Cocopeat Bricks, the perfect choice for environmentally conscious and thriving plant cultivation.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> <span>Cocopeat Bricks - 650 grams excel in water retention, providing an optimal environment for plants by ensuring consistent moisture levels.</span></li>
-              <li><i class="bi bi-check"></i><span>The compact design of these bricks, weighing just 650 grams, makes them easy to handle and transport, enhancing convenience for gardening enthusiasts.</span></li>
-              <li><i class="bi bi-check"></i> <span>Suitable for a variety of plants and gardening practices, Cocopeat Bricks offer versatility in application, from seed starting to container gardening, providing a nurturing substrate for diverse plant species.</span>.</li>
-            </ul>
-            <a href="#guide-download" class="btn btn-get-started align-self-start">Know More</a>
-          </div>
-        </div><!-- Features Item 3 -->
-
-        <div class="row gy-4 align-items-center features-item" id="cocoslabs">
-          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <h3>Cocopeat Slabs</h3>
-            <p>
-              Elevate your agricultural endeavors with our Cocopeat Slabs, a premium and sustainable growing medium. Crafted from natural coconut fibers, these slabs offer exceptional water retention, aeration, and nutrient-holding capabilities. Their substantial size makes them ideal for large-scale cultivation, providing a reliable foundation for healthy plant growth.
-            </p>
-            <a href="#guide-download" class="btn btn-get-started">Know More</a>
-          </div>
-          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <div class="image-stack">
-              <img src="assets/img/features-slab-1.jpg" alt="" class="stack-front">
-              <img src="assets/img/features-slab-2.jpg" alt="" class="stack-back">
-            </div>
-          </div>
-        </div><!-- Features Item -->
-
- <div class="row gy-4 align-items-stretch justify-content-between features-item" id="growbags">
-          <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
-            <img src="assets/img/features-grow-bag-1.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
-            <h3>Cocopeat Grow Bags - Versatile Sizes for Every Plant:</h3>
-            <p>Explore our range of Cocopeat Grow Bags, available in various sizes to cater to the diverse needs of your plants. From compact seedlings to thriving vegetables, find the perfect match for your gardening ambitions.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> <span><b>Mini Grow Bags (250 grams):</b> Ideal for small herbs and seedlings, our mini grow bags provide a nurturing environment for delicate plants.</span></li>
-              <li><i class="bi bi-check"></i><span><b>Standard Grow Bags (500 grams):</b>Versatile and popular, these bags suit a wide range of plants, making them perfect for home gardens and small-scale cultivation.</span></li>
-              <li><i class="bi bi-check"></i> <span><b>Medium Grow Bags (1 kg):</b> Offering ample space for root development, medium-sized grow bags are suitable for flowering plants and vegetables.</span>.</li>
-              <li><i class="bi bi-check"></i> <span><b>Large Grow Bags (2 kg):</b> Designed for robust growth, these bags accommodate larger plants, making them suitable for fruit-bearing trees and bushes.</span>.</li>
-              <li><i class="bi bi-check"></i> <span><b>XL Grow Bags (5 kg):</b> The extra-large size is perfect for substantial plants, providing the necessary support for thriving in both indoor and outdoor environments.</span></li>
-            </ul>
-            <a href="#guide-download" class="btn btn-get-started align-self-start">Know More</a>
-          </div>
-        </div><!-- Features Item 3 -->
-
-      </div>
-
-    </section><!-- End Features Section -->
-
-    <!-- Portfolio Section - Home Page -->
-    <section id="portfolio" class="portfolio">
-
-      <!--  Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-<p>Explore our portfolio and embark on a journey towards greener gardening practices with us.</p>
-
-
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-blocks">Blocks</li>
-            <li data-filter=".filter-slabs">Slabs</li>
-            <li data-filter=".filter-growbags">Grow Bags</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-growbags">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Premium grow bag</h4>
-                <p>Our premium grow bag is used for growing multiple plants in a row</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-blocks">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Indoor plant design</h4>
-                <p>Design your indoor plants with our cocopeat blocks for rich nutrients</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-growbags">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>All size grow bags</h4>
-                <p>We supply grow bags sized perfectly for small and medium sized plants </p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-slabs">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Coco Slabs for big growth! </h4>
-                <p>Align your garden beautifully with these coco slabs</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-blocks">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Multiple size cocopeats</h4>
-                <p>Articulate your garden with the perfect sized cocopeats</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-blocks">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Perfect growth with our cocopeats</h4>
-                <p>Supply better nutrients to your indoor plants with our cocopeat solutions</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-slabs">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Your dream garden with our coco slabs</h4>
-                <p>Make your dream garden come to shape with our cocoslabs and cocopeat solutions</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-blocks">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Gowth companion for future trees</h4>
-                <p>Cocopeats supply good nutrition for plants in your garden that will soon bloom into beautiful trees in your garen</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Nutrient rich garden</h4>
-                <p>Make your garden soil rich in nutrients with our coco bricks</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- End Portfolio Section -->
-
-
-<!-- Faq Section - Home Page -->
-<section id="faq" class="faq">
-
-  <div class="container">
-
-    <div class="row gy-4">
-
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="content px-xl-5">
-          <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
-          <p>
-            Welcome to our Cocopeat Products FAQ section! Find answers to common queries below.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-
-        <div class="faq-container">
-          <div class="faq-item faq-active">
-            <h3><span class="num">1.</span> <span>What are the benefits of using cocopeat for gardening?</span></h3>
-            <div class="faq-content">
-              <p>Cocopeat improves soil structure, retains moisture, enhances aeration, and promotes healthy root growth.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
-
-          <div class="faq-item">
-            <h3><span class="num">2.</span> <span>How do I use cocopeat blocks effectively?</span></h3>
-            <div class="faq-content">
-              <p>Soak cocopeat blocks in water to expand them, then mix with soil or use as a soilless growing medium for plants.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
-
-          <div class="faq-item">
-            <h3><span class="num">3.</span> <span>Can cocopeat be used as a sustainable alternative to traditional soil?</span></h3>
-            <div class="faq-content">
-              <p>Yes, cocopeat is a sustainable alternative to traditional soil due to its eco-friendly production process and ability to reduce water usage.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
-
-          <div class="faq-item">
-            <h3><span class="num">4.</span> <span>How often should cocopeat be watered?</span></h3>
-            <div class="faq-content">
-              <p>Cocopeat should be watered when it starts to dry out, typically every 2-3 days depending on environmental conditions.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
-
-          <div class="faq-item">
-            <h3><span class="num">5.</span> <span>Are there any tips for incorporating cocopeat into potting mixes?</span></h3>
-            <div class="faq-content">
-              <p>Mix cocopeat with perlite, compost, and other additives for a well-draining potting mix. Adjust ratios based on plant needs and container type.</p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div><!-- End Faq item-->
-
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
-</section><!-- End Faq Section -->
-
-
-    <!-- Team Section - Home Page -->
-    <section id="team" class="team">
-
-      <!--  Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <p>Meet the dedicated individuals driving our cocopeat business forward.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-5">
-
-          <div class="col-lg-6 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-            <div class="member-img">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              <div class="social">
-<!--                 <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a> -->
-                <a href="https://www.linkedin.com/in/greencocopeat/"><i class="bi bi-linkedin"></i></a>
-                <a href="mailto:shiva@gogreencocopeat.com"><i class="bi bi-envelope"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Shiva</h4>
-              <span> CEO & Managing Partner</span>
-<p>As the Chief Executive Officer, Shiva leads our cocopeat business with a visionary approach, driving strategic growth initiatives and fostering a culture of innovation. </p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-            <div class="member-img">
-              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <div class="social">
-<!--                 <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a> -->
-                <a href="https://www.linkedin.com/in/greencocopeat/"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Vinayagamoorthy</h4>
-              <span>Managing Partner</span>
-              <p>With a wealth of experience in the agricultural sector, Vinayagamoorthy is dedicated to promoting sustainable practices and delivering high-quality cocopeat products that meet the diverse needs of our customers.</p>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
-      </div>
-
-    </section><!-- End Team Section -->
-
-    <!-- Call-to-action Section - Home Page -->
-    <section id="guide-download" class="call-to-action">
-
-      <img src="assets/img/cta-bg.jpg" alt="">
-
-      <div class="container">
-        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-10">
-            <div class="text-center">
-              <h3>Get our Product Guide PDF</h3>
-              <ul>
-                  <li><i class="bi bi-check"></i><span>Our team meticulously inspects raw material suppliers to ensure the highest standards before onboarding them into our database.</span></li>
-                  <li><i class="bi bi-check"></i><span>We also maintain strong partnerships with our suppliers to continually enhance product quality and foster positive business relationships.</span></li>
-                  <li><i class="bi bi-check"></i> <span>In our Cocopeat drying process, we utilize only cement floor yards to prevent any soil or foreign material contamination. </span></li>
-              </ul>
-
-<br>
-              <p>Download our guide to discover how our commitment to excellence ensures superior quality in every batch of cocopeat products.</p>
-
-<a class="cta-btn" href="#">Download Guide</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- End Call-to-action Section -->
-
-    <!-- Contact Section - Home Page -->
-    <section id="contact" class="contact">
-
-      <!--  Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-<p>Have questions or inquiries? Reach out to us today! Let's connect and explore sustainable gardening together.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6">
-
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <div class="info-item" data-aos="fade" data-aos-delay="200">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
-                  <p>2/142-4, School street</p>
-                  <p>Anthoniyarpuram, Korampallam, </p>
-                  <p>TUTICORIN-628101</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="col-md-6">
-                <div class="info-item" data-aos="fade" data-aos-delay="300">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
-                  <p>+91 90257 59761</p>
-                  <p>+91 83004 61305</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="col-md-6">
-                <div class="info-item" data-aos="fade" data-aos-delay="400">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>shiva@gogreencocopeat.com</p>
-                  <p>green_cocopeat@outlook.com</p>
-                  <p>green_cocopeatexporter@outlook.com </p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="col-md-6">
-                <div class="info-item" data-aos="fade" data-aos-delay="500">
-                  <i class="bi bi-clock"></i>
-                  <h3>Open Hours</h3>
-                  <p>Monday - Friday</p>
-                  <p>9:00AM - 05:00PM</p>
-                </div>
-              </div><!-- End Info Item -->
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- End Contact Section -->
-
-  </main>
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="#" class="logo d-flex align-items-center">
-            <span>Green Coco Peat</span>
-          </a>
-   <p>Explore the benefits of Green Coco Peat for a sustainable future. Our eco-friendly cocopeat products are designed to enhance plant growth while minimizing environmental impact. Take a step towards sustainable gardening with products from Green Coco Peat.</p>
-
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About us</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#team">Our Team</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Products</h4>
-          <ul>
-            <li><a href="#cocoblocks">Coco Blocks</a></li>
-            <li><a href="#cocobricks">Coco Bricks</a></li>
-            <li><a href="#cocoslabs">Coco Peat Slabs</a></li>
-            <li><a href="#growbags">Grow Bags</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>Green Cocopeat Exporter</p>
-          <p>2/142-4, School street</p>
-          <p>Anthoniyarpuram, Korampallam,</p>
-          <p>TUTICORIN-628101</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+91 90257 59761</span></p>
-          <p><strong>Alternate Phone:</strong> <span>+91 83004 61305</span></p>
-          <p><strong>Email:</strong> <span>green_cocopeat@outlook.com</span></p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>&copy; <span>Copyright</span> <strong class="px-1">Green Coco Peat</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        Designed by <a href="https://xamoza.com/">xamoza</a>
-      </div>
-    </div>
-
-  </footer><!-- End Footer -->
-
-  <!-- Scroll Top Button -->
-  <div id="scroll-top">
-      <a href="https://api.whatsapp.com/send?phone=919025759761&text=Hi%21%20Enquiry%20for%20greencocopeat%20from%20gogreencocopeat.com" class="float justify-content-center" target="_blank"> <i class="bi bi-whatsapp my-float"></i> Chat on WhatsApp</a>
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            </nav>
+            <!-- end navigation -->
+        </header>
+        <!-- end header -->  
+        <!-- start hero section -->
+<!-- start page title -->
+<section class="page-title-background-video position-relative overflow-hidden ipad-top-space-margin">
+    <div class="opacity-extra-medium bg-black"></div>
+    <div class="container">
+        <div class="row align-items-center justify-content-center small-screen">
+            <div class="col-12 col-xxl-10 col-lg-10 col-md-10 position-relative page-title-extra-large text-center" data-anime='{ "el": "childs", "translateY": [0, 0], "perspective": [1200,1200], "scale": [1.05, 1], "rotateX": [30, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'> 
+
+  <div id="heading-text" class="row justify-content-center">
+<h1 class="text-white fw-300 ls-minus-1px mb-0">Welcome to <span class="fw-600" id="gctext">Golden Crop</span></h1>
+<h6 class="pt-2 fw-300 text-white" data-fancy-text='{ "effect": "zoom", "string": ["Your Premier Food & Food Ingredients Company"] }'></h6>
 </div>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <h4 class="text-white fw-200" id="secondHeading"> We specialize in supplying high-quality <span id="secondSpan" class="fw-600" data-fancy-text='{ "effect": "rotate", "string": ["Rice","Pulses","Grains","Oilseeds","Sugar","Beans","Lentils","Peas","Nuts","Spices","Dry Fruits","Vegetable Oil"] }'>
+</span>
+</h4>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
+                <div>
+                        <a href="index.html" target="blank" class="btn btn-extra-large btn-switch-text btn-gradient-purple-pink btn-rounded me-10px ls-0px mt-15px">
+                            <span>
+                                <span class="btn-double-text" data-text="Explore products">Discover the Treasure</span>
+                                <span><i class="fa fa-search"></i></span>
+                            </span>
+                        </a>
+                        <a href="demo-it-business-contact.html" class="btn btn-extra-large btn-switch-text btn-transparent-white-light btn-rounded border-1 ls-0px mt-15px">
+                            <span>
+                                <span class="btn-double-text" data-text="Contact us">Golden opportunity</span>
+                                <span><i class="fa-regular fa-envelope"></i></span>
+                            </span>
+                        </a>
+                    </div>  
 
-  <script type="text/javascript">
+            </div>
+        </div>
+    </div>
+    <video loop="" autoplay="" playsinline controls="" muted class="html-video" poster="image path">
+        <source type="video/mp4" src="video/golden_crop_banner.mp4" />
+        <source type="video/webm" src="video path" />
+    </video>
+</section>
+<!-- end page title -->
 
-//const $formContact = document.querySelector("#numberSubmit");
+        <!-- end hero section -->
+        <!-- start section -->
+        <section class="sm-pt-50px">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center mb-7" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-01 md-mb-30px">
+                        <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                            <div class="feature-box-icon me-20px">
+                                <img src="images/gif-icons/verified-gold.gif" alt=""/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block fs-18 text-dark-gray fw-700 mb-5px">Golden Standard</span>
+                                <p class="w-80 xl-w-90 lg-w-100">Unmatched excellence in every supplied product.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-01 md-mb-30px">
+                        <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                            <div class="feature-box-icon me-20px">
+                                <img src="images/gif-icons/thumbs-up-gold.gif" alt=""/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block fs-18 text-dark-gray fw-700 mb-5px">Golden Assurance</span>
+                                <p class="w-80 xl-w-90 lg-w-100"> Consistent on promises with transparent communication.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-01 md-mb-30px">
+                        <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                            <div class="feature-box-icon me-20px">
+                                <img src="images/gif-icons/award-gold.gif" alt=""/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block fs-18 text-dark-gray fw-700 mb-5px">Golden Expertise</span>
+                                <p class="w-80 xl-w-90 lg-w-100">Decades of trusted expertise, in exporting the best</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end features box item --> 
+                </div>
+                <div class="row mb-5 align-items-center">
+                    <div class="col-lg-5 position-relative md-mb-20">
+                        <div class="w-70 xs-w-80" data-animation-delay="50" data-shadow-animation="true">
+                            <img src="images/section-1-2.jpg" alt="" class="border-radius-8px w-100">
+                        </div>
+                        <div class="w-60 overflow-hidden position-absolute right-minus-15px xs-right-15px xs-w-60 bottom-minus-50px" data-shadow-animation="true" data-animation-delay="250" data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)">
+                            <img src="images/section-1-1.jpg" alt="" class="border-radius-8px w-100 box-shadow-quadruple-large" />
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 offset-lg-1" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-12 lh-40 fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-flex"><i class="bi bi-award fs-16 me-5px"></i>Export Excellence</span>
+                        <h3 class="text-dark-gray fs-50 fw-700 ls-minus-2px">Golden Crop: Elevating Your Export Endeavors</h3>
+                        <p class="mb-40px sm-mb-25px">We specialize in delivering top-tier products sourced globally. From optimizing logistics to ensuring excellence in quality, we're dedicated to driving success in every aspect of your export ventures.</p>
+                        <div class="progress-bar-style-02">
+                            <!-- start progress bar item -->
+                            <div class="progress mb-15px border-radius-50px fw-700 fs-11 lh-11 text-white bg-white">
+                                <div class="progress-bar bg-gradient-flamingo-red-transparent m-0" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" aria-label="business">
+                                    <span class="progress-bar-percent text-flamingo">98%</span>
+                                </div>
+                                <div class="progress-bar-title text-uppercase">CUSTOMER SATISFACTION</div>
+                            </div>
+                            <!-- end progress bar item -->
+                            <!-- start progress bar item -->
+                            <div class="progress border-radius-50px fw-700 fs-11 lh-11 text-white bg-white">
+                                <div class="progress-bar bg-gradient-base-color-transparent m-0" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="technology">
+                                    <span class="progress-bar-percent text-base-color">85%</span>
+                                </div>
+                                <div class="progress-bar-title text-uppercase">GLOBAL MARKET PENETRATION</div>
+                            </div>
+                            <!-- end progress bar item -->
+                        </div>
+                    </div>
+                </div>
 
-function sendEmail() { 
-  const currentdate = new Date();
-  const datetime = `on Date & Time: ${currentdate.toLocaleString()}`;  // Use toLocaleString for formatting
+            </div>
+        </section>
+        <!-- end section --> 
+        <!-- products list start section -->
+        <section class="bg-dark-gray">
+            <div class="container">
+                <div class="row justify-content-center mb-5 sm-mb-30px">
+                    <div class="col-xl-6 col-lg-8 col-md-10 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <h3 class="text-white mb-0 fw-600">Discover Our Diverse Range of products</h3>
+                    </div>
+                </div>
+                <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-0" data-anime='{ "el": "childs", "translateY": [15, 0], "opacity": [0,1], "duration": 300, "delay":0, "staggervalue": 100, "easing": "easeOutQuad" }'>
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-bottom border-end border-1 border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/rice_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Rice</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-bottom border-end border-1 sm-border-end-0 border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/pulses_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Pulses</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-bottom border-end border-1 border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/grains_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Grains</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-bottom border-end border-1 md-border-end-0 border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/oil_seeds_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Oilseeds</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-bottom border-end border-1 border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/sugar_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Sugar</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-bottom border-1 md-border-end sm-border-end-0 border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/beans_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Beans</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-end border-1 md-border-bottom border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/lentils_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Lentils</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-end border-1 md-border-end-0 md-border-bottom border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/peas_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Peas</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-end border-1 sm-border-bottom border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/nuts_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Nuts</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-end border-1 sm-border-end-0 sm-border-bottom border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/spices_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Spices</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-end border-1 border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/dry_fruits_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Dry Fruits</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                    <!-- start features box item -->
+                    <div class="col icon-with-text-style-04 transition-inner-all">
+                        <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 xs-p-12 last-paragraph-no-margin overflow-hidden border-1 border-color-transparent-white-light border-color-transparent-on-hover">
+                            <div class="feature-box-icon">
+                               <img src="images/theIcons/veg_oil_icon.svg"/>
+                            </div>
+                            <div class="feature-box-content">
+                                <span class="d-inline-block text-white fw-600 fs-14 text-uppercase">Vegetable Oil</span> 
+                            </div>
+                            <div class="feature-box-overlay bg-base-color"></div>
+                        </div>  
+                    </div>
+                    <!-- end features box item -->
+                </div>
+            </div>
+        </section>
+        <!-- products list end section -->
+        <!-- small-contactus start section -->
+        <section class="p-0 bg-midnight-blue">
+            <div class="container">
+                <div class="row align-items-center justify-content-center g-0" data-anime='{  "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <div class="col-auto d-flex align-items-center">
+                        <img src="images/go-contact.png" alt="">
+                        <div class="fs-17 lh-26 last-paragraph-no-margin text-white pt-15px pb-15px fw-500">
+                            <p>Optimize Your Search Efforts. Contact Golden Crop for Solutions <a href="demo-it-business-contact.html" class="text-decoration-line-bottom text-white">Contact us now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- small-contactus end section -->
 
-  const message = {
-    phone: document.querySelector("#phone-to-email").value,
-    datetime: datetime  // Assign the variable value
-  };
-  Email.send({
-    SecureToken : "a01cf977-a155-49c3-9001-41b0de902882",
-    To : 'manocools@gmail.com',
-    From : "digitaldeliver@gmail.com",
-    Subject : "This is the subject",
-    Body : `${message.phone} enquired on ${message.datetime}`
-}).then(
-  message => alert(message)
-);
-        } 
-      </script> 
+        <!-- special portfolio start section -->
+        <section class="overflow-hidden bg-very-light-gray position-relative">
+            <div class="container">
+                <div class="row align-items-center mb-5 sm-mb-30px text-center text-lg-start" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <div class="col-lg-5 md-mb-30px"> 
+                        <h3 class="text-dark-gray fw-700 ls-minus-2px mb-0">Our Specialized Product Portfolio</h3>
+                    </div> 
+                    <div class="col-lg-4 offset-xl-1 last-paragraph-no-margin md-mb-30px"> 
+                        <p>Explore our range of agricultural products that we specialize in exporting worldwide</p>
+                    </div> 
+                    <div class="col-xl-2 col-lg-3 d-flex justify-content-center">
+                        <!-- start slider navigation -->
+                        <div class="slider-one-slide-prev-1 icon-small text-dark-gray swiper-button-prev slider-navigation-style-04 bg-white box-shadow-large"><i class="fa-solid fa-arrow-left"></i></div>
+                        <div class="slider-one-slide-next-1 icon-small text-dark-gray swiper-button-next slider-navigation-style-04 bg-white box-shadow-large"><i class="fa-solid fa-arrow-right"></i></div> 
+                        <!-- end slider navigation -->
+                    </div>
+                </div>
+                <div class="row align-items-center" data-anime='{ "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <div class="col-12">
+                        <div class="outside-box-right-20 sm-outside-box-right-0">
+                            <div class="swiper magic-cursor slider-one-slide" data-slider-options='{ "slidesPerView": 1, "spaceBetween": 30, "loop": true, "navigation": { "nextEl": ".slider-one-slide-next-1", "prevEl": ".slider-one-slide-prev-1" }, "autoplay": { "delay": 4000, "disableOnInteraction": false }, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1200": { "slidesPerView": 4 }, "992": { "slidesPerView": 3 }, "768": { "slidesPerView": 2 }, "320": { "slidesPerView": 1 } }, "effect": "slide" }'>
+                                <div class="swiper-wrapper">
+                                    <!-- start slider item --> 
+                                    <div class="swiper-slide">
+                                        <!-- start services box style --> 
+                                        <div class="services-box-style-03 last-paragraph-no-margin border-radius-6px overflow-hidden">
+                                            <div class="position-relative">
+                                                <a href="demo-it-business-services-details.html"><img src="images/products/rice.jpg" alt=""></a>
+                                                <a href="#" class="btn btn-very-small btn-rounded btn-dark-gray text-white btn-box-shadow ps-15px pe-15px pt-5px pb-5px lh-16 position-absolute right-30px top-30px text-uppercase">Grains</a>
+                                            </div>
+                                            <div class="bg-white">
+                                                <div class="ps-65px pe-65px pt-30px pb-30px text-center">
+                                                    <a href="demo-it-business-services-details.html" class="d-inline-block fs-18 fw-700 text-dark-gray mb-5px">Rice</a>
+                                                    <p> Premium rice varieties sourced from the finest fields.</p> 
+                                                </div> 
+                                                <div class="d-flex justify-content-center border-top border-color-extra-medium-gray pt-20px pb-20px ps-50px pe-50px position-relative text-center">
+                                                    <a href="demo-it-business-services-details.html" class="btn btn-link btn-hover-animation-switch btn-medium fw-700 text-dark-gray text-uppercase">
+                                                        <span>
+                                                            <span class="btn-text">Explore all Grains</span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                        </span> 
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end services box style -->
+                                    </div>
+                                    <!-- end slider item -->
+                                    <!-- start slider item --> 
+                                    <div class="swiper-slide">
+                                        <!-- start services box style --> 
+                                        <div class="services-box-style-03 last-paragraph-no-margin border-radius-6px overflow-hidden">
+                                            <div class="position-relative">
+                                                <a href="demo-it-business-services-details.html"><img src="images/products/peanuts.jpg" alt=""></a>
+                                                <a href="#" class="btn btn-very-small btn-rounded btn-dark-gray text-white btn-box-shadow ps-15px pe-15px pt-5px pb-5px lh-16 position-absolute right-30px top-30px text-uppercase">Seeds</a>
+                                            </div>
+                                            <div class="bg-white">
+                                                <div class="ps-65px pe-65px pt-30px pb-30px text-center">
+                                                    <a href="demo-it-business-services-details.html" class="d-inline-block fs-18 fw-700 text-dark-gray mb-5px">Peanuts</a>
+                                                    <p>Our peanuts are known for their rich flavor and crunchy texture.</p> 
+                                                </div> 
+                                                <div class="d-flex justify-content-center border-top border-color-extra-medium-gray pt-20px pb-20px ps-50px pe-50px position-relative text-center">
+                                                    <a href="demo-it-business-services-details.html" class="btn btn-link btn-hover-animation-switch btn-medium fw-700 text-dark-gray text-uppercase">
+                                                        <span>
+                                                            <span class="btn-text">Explore all Seeds</span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                        </span> 
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end services box style --> 
+                                    </div>
+                                    <!-- end slider item -->
+                                    <!-- start slider item --> 
+                                    <div class="swiper-slide">
+                                        <!-- start services box style --> 
+                                        <div class="services-box-style-03 last-paragraph-no-margin border-radius-6px overflow-hidden">
+                                            <div class="position-relative">
+                                                <a href="demo-it-business-services-details.html"><img src="images/products/chickpeas.jpg" alt=""></a>
+                                                <a href="#" class="btn btn-very-small btn-rounded btn-dark-gray text-white btn-box-shadow ps-15px pe-15px pt-5px pb-5px lh-16 position-absolute right-30px top-30px text-uppercase">Pulses</a>
+                                            </div>
+                                            <div class="bg-white">
+                                                <div class="ps-65px pe-65px pt-30px pb-30px text-center">
+                                                    <a href="demo-it-business-services-details.html" class="d-inline-block fs-18 fw-700 text-dark-gray mb-5px">Chickpeas</a>
+                                                    <p>Our Chicpeas are prized for their tender texture and rich flavor.</p> 
+                                                </div> 
+                                                <div class="d-flex justify-content-center border-top border-color-extra-medium-gray pt-20px pb-20px ps-50px pe-50px position-relative text-center">
+                                                    <a href="demo-it-business-services-details.html" class="btn btn-link btn-hover-animation-switch btn-medium fw-700 text-dark-gray text-uppercase">
+                                                        <span>
+                                                            <span class="btn-text">Explore all Pulses</span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                        </span> 
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end services box style -->
+                                    </div>
+                                    <!-- end slider item -->
+                                    <!-- start slider item --> 
+                                    <div class="swiper-slide">
+                                        <!-- start services box style --> 
+                                        <div class="services-box-style-03 last-paragraph-no-margin border-radius-6px overflow-hidden">
+                                            <div class="position-relative">
+                                                <a href="demo-it-business-services-details.html"><img src="images/products/almonds.jpg" alt=""></a>
+                                                <a href="#" class="btn btn-very-small btn-rounded btn-dark-gray text-white btn-box-shadow ps-15px pe-15px pt-5px pb-5px lh-16 position-absolute right-30px top-30px text-uppercase">Nuts</a>
+                                            </div>
+                                            <div class="bg-white">
+                                                <div class="ps-65px pe-65px pt-30px pb-30px text-center">
+                                                    <a href="demo-it-business-services-details.html" class="d-inline-block fs-18 fw-700 text-dark-gray mb-5px">Almonds</a>
+                                                    <p>Rich flavor with satisfying crunch, exquisite taste and superior quality</p> 
+                                                </div> 
+                                                <div class="d-flex justify-content-center border-top border-color-extra-medium-gray pt-20px pb-20px ps-50px pe-50px position-relative text-center">
+                                                    <a href="demo-it-business-services-details.html" class="btn btn-link btn-hover-animation-switch btn-medium fw-700 text-dark-gray text-uppercase">
+                                                        <span>
+                                                            <span class="btn-text">Explore all Nuts</span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                        </span> 
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end services box style -->
+                                    </div>
+                                    <!-- end slider item -->
+                                    <!-- start slider item --> 
+                                    <div class="swiper-slide">
+                                        <!-- start services box style --> 
+                                        <div class="services-box-style-03 last-paragraph-no-margin border-radius-4px overflow-hidden">
+                                            <div class="position-relative">
+                                                <a href="demo-it-business-services-details.html"><img src="images/products/sugar.jpg" alt=""></a>
+                                                <a href="#" class="btn btn-very-small btn-rounded btn-dark-gray text-white btn-box-shadow ps-15px pe-15px pt-5px pb-5px lh-16 position-absolute right-30px top-30px text-uppercase">Sugar</a>
+                                            </div>
+                                            <div class="bg-white">
+                                                <div class="ps-65px pe-65px pt-30px pb-30px text-center">
+                                                    <a href="demo-it-business-services-details.html" class="d-inline-block fs-18 fw-700 text-dark-gray mb-5px">ICUMSA 45 Sugar</a>
+                                                    <p>Got from the finest cane fields and processed to ensure purity</p> 
+                                                </div> 
+                                                <div class="d-flex justify-content-center border-top border-color-extra-medium-gray pt-20px pb-20px ps-50px pe-50px position-relative text-center">
+                                                    <a href="demo-it-business-services-details.html" class="btn btn-link btn-hover-animation-switch btn-medium fw-700 text-dark-gray text-uppercase">
+                                                        <span>
+                                                            <span class="btn-text">Explore all sugar</span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                        </span> 
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end services box style -->
+                                    </div>
+                                    <!-- end slider item -->
+                                    <!-- start slider item --> 
+                                    <div class="swiper-slide">
+                                        <!-- start services box style --> 
+                                        <div class="services-box-style-03 last-paragraph-no-margin border-radius-6px overflow-hidden">
+                                            <div class="position-relative">
+                                                <a href="demo-it-business-services-details.html"><img src="images/products/wheat-gluten.jpg" alt=""></a>
+                                                <a href="#" class="btn btn-very-small btn-rounded btn-dark-gray text-white btn-box-shadow ps-15px pe-15px pt-5px pb-5px lh-16 position-absolute right-30px top-30px text-uppercase">Feed</a>
+                                            </div>
+                                            <div class="bg-white">
+                                                <div class="ps-65px pe-65px pt-30px pb-30px text-center">
+                                                    <a href="demo-it-business-services-details.html" class="d-inline-block fs-18 fw-700 text-dark-gray mb-5px">Wheat gluten</a>
+                                                    <p>Elevate your cooking & baking with the first quality wheat gluten.</p> 
+                                                </div> 
+                                                <div class="d-flex justify-content-center border-top border-color-extra-medium-gray pt-20px pb-20px ps-50px pe-50px position-relative text-center">
+                                                    <a href="demo-it-business-services-details.html" class="btn btn-link btn-hover-animation-switch btn-medium fw-700 text-dark-gray text-uppercase">
+                                                        <span>
+                                                            <span class="btn-text">Explore all Feed</span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                        </span> 
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end services box style -->
+                                    </div>
+                                    <!-- end slider item -->
+                                    <!-- start slider item --> 
+                                    <div class="swiper-slide">
+                                        <!-- start services box style --> 
+                                        <div class="services-box-style-03 last-paragraph-no-margin border-radius-6px overflow-hidden">
+                                            <div class="position-relative">
+                                                <a href="demo-it-business-services-details.html"><img src="images/products/vegoil.jpg" alt=""></a>
+                                                <a href="#" class="btn btn-very-small btn-rounded btn-dark-gray text-white btn-box-shadow ps-15px pe-15px pt-5px pb-5px lh-16 position-absolute right-30px top-30px text-uppercase">Vegetable Oil</a>
+                                            </div>
+                                            <div class="bg-white">
+                                                <div class="ps-65px pe-65px pt-30px pb-30px text-center">
+                                                    <a href="demo-it-business-services-details.html" class="d-inline-block fs-18 fw-700 text-dark-gray mb-5px">Sunflower Oil</a>
+                                                    <p>Experience the pure goodness of premium sunflower oil</p> 
+                                                </div> 
+                                                <div class="d-flex justify-content-center border-top border-color-extra-medium-gray pt-20px pb-20px ps-50px pe-50px position-relative text-center">
+                                                    <a href="demo-it-business-services-details.html" class="btn btn-link btn-hover-animation-switch btn-medium fw-700 text-dark-gray text-uppercase">
+                                                        <span>
+                                                            <span class="btn-text">Explore all Vegetable oil</span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                        </span> 
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end services box style --> 
+                                    </div>
+                                    <!-- end slider item -->
+                                    <!-- start slider item --> 
+                                    <div class="swiper-slide">
+                                        <!-- start services box style --> 
+                                        <div class="services-box-style-03 last-paragraph-no-margin border-radius-6px overflow-hidden">
+                                            <div class="position-relative">
+                                                <a href="demo-it-business-services-details.html"><img src="images/products/cornstarch.jpg" alt=""></a>
+                                                <a href="#" class="btn btn-very-small btn-rounded btn-dark-gray text-white btn-box-shadow ps-15px pe-15px pt-5px pb-5px lh-16 position-absolute right-30px top-30px text-uppercase">Starch</a>
+                                            </div>
+                                            <div class="bg-white">
+                                                <div class="ps-65px pe-65px pt-30px pb-30px text-center">
+                                                    <a href="demo-it-business-services-details.html" class="d-inline-block fs-18 fw-700 text-dark-gray mb-5px">Corn Starch</a>
+                                                    <p>Sourced and processed from the finest corn kernels.</p> 
+                                                </div> 
+                                                <div class="d-flex justify-content-center border-top border-color-extra-medium-gray pt-20px pb-20px ps-50px pe-50px position-relative text-center">
+                                                    <a href="demo-it-business-services-details.html" class="btn btn-link btn-hover-animation-switch btn-medium fw-700 text-dark-gray text-uppercase">
+                                                        <span>
+                                                            <span class="btn-text">Explore all starch</span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                        </span> 
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end services box style -->
+                                    </div>
+                                    <!-- end slider item -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+        </section>
+        <!-- special portfolio end section -->
 
 
-</body>
 
+        <!-- start section -->
+        <section class="position-relative"> 
+            <div class="container">
+                <div class="row align-items-center justify-content-center mb-7 sm-mb-40px">
+                    <div class="col-xl-5 col-lg-6 col-md-12 md-mb-50px" data-anime='{ "el": "childs", "translateY": [15, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 100, "easing": "easeOutQuad" }'>
+                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-12 lh-40 fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-flex"><i class="bi bi-patch-check fs-16 me-5px"></i>Importing Services</span>
+                        <h3 class="fw-700 text-dark-gray ls-minus-1px">Unlock Growth Potential with Our Importer Services</h3>
+                        <!-- start features box item -->
+                        <div class="icon-with-text-style-08 mb-10px">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div class="feature-box-icon feature-box-icon-rounded w-35px h-35px bg-very-light-gray rounded-circle me-15px">
+                                    <i class="fa-solid fa-check fs-12 text-base-color"></i> 
+                                </div>
+                                <div class="feature-box-content"> 
+                                    <span class="text-dark-gray fw-500">Stringent standards, thorough vetting for suppliers.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end features box item -->
+                        <!-- start features box item -->
+                        <div class="icon-with-text-style-08 mb-10px">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div class="feature-box-icon feature-box-icon-rounded w-35px h-35px bg-very-light-gray rounded-circle me-15px">
+                                    <i class="fa-solid fa-check fs-12 text-base-color"></i> 
+                                </div>
+                                <div class="feature-box-content"> 
+                                    <span class="text-dark-gray fw-500">Certifications: BRC, Kosher, Halal, FSSC.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end features box item -->
+                        <!-- start features box item -->
+                        <div class="icon-with-text-style-08 mb-10px">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div class="feature-box-icon feature-box-icon-rounded w-35px h-35px bg-very-light-gray rounded-circle me-15px">
+                                    <i class="fa-solid fa-check fs-12 text-base-color"></i> 
+                                </div>
+                                <div class="feature-box-content"> 
+                                    <span class="text-dark-gray fw-500">Compliance through external lab analysis.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end features box item -->
+                        <!-- start features box item -->
+                        <div class="icon-with-text-style-08">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div class="feature-box-icon feature-box-icon-rounded w-35px h-35px bg-very-light-gray rounded-circle me-15px">
+                                    <i class="fa-solid fa-check fs-12 text-base-color"></i> 
+                                </div>
+                                <div class="feature-box-content"> 
+                                    <span class="text-dark-gray fw-500">Open communication with clients, suppliers.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end features box item -->
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <div class="row align-items-center position-relative md-mb-15" data-anime='{ "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <div class="col-md-5 sm-mb-30px" data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)">
+                               <img src="images\index_images\1-1.jpg" alt="" />
+                            </div>
+                            <div class="col-lg-7 col-md-7 sm-mb-30px text-end" data-bottom-top="transform: translateY(-30px)" data-top-bottom="transform: translateY(30px)">
+                                <img src="images\index_images\1-2.jpg" alt="" class="box-shadow-quadruple-large md-w-80 sm-w-100" />
+                            </div>
+                            <div class="w-50 sm-w-100 overflow-hidden position-absolute sm-position-relative left-140px bottom-minus-200px sm-bottom-0px sm-left-0px p-0 sm-ps-15px sm-pe-15px" data-shadow-animation="true" data-animation-delay="100" data-bottom-top="transform: translateY(20px)" data-top-bottom="transform: translateY(-20px)">
+                                <img src="images\index_images\1-3.jpg" alt="" class="box-shadow-quadruple-large w-100" />
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="row align-items-center justify-content-center mb-7 sm-mb-40px">
+
+                    <div class="col-lg-6 position-relative">
+                        <div class="row align-items-center position-relative md-mb-15" data-anime='{ "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <div class="col-md-5 sm-mb-30px" data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)">
+                                <img class="w-100" src="images\index_images\2-1.jpg" alt="" />
+                            </div>
+                            <div class="col-lg-7 col-md-7 sm-mb-30px text-end" data-bottom-top="transform: translateY(-30px)" data-top-bottom="transform: translateY(30px)">
+                                <img src="images\index_images\2-2.jpg" alt="" class="box-shadow-quadruple-large md-w-100" />
+                            </div>
+                            <div class="w-50 sm-w-100 overflow-hidden position-absolute sm-position-relative left-140px bottom-minus-200px sm-bottom-0px sm-left-0px p-0 sm-ps-15px sm-pe-15px" data-shadow-animation="true" data-animation-delay="100" data-bottom-top="transform: translateY(20px)" data-top-bottom="transform: translateY(-20px)">
+                                <img src="images\index_images\2-3.jpg" alt="" class="box-shadow-quadruple-large w-100" />
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="col-xl-5 col-lg-6 col-md-12 md-mb-50px" data-anime='{ "el": "childs", "translateY": [15, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 100, "easing": "easeOutQuad" }'>
+                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-12 lh-40 fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-flex"><i class="bi bi-patch-check fs-16 me-5px"></i>Exporting Services</span>
+                        <h3 class="fw-700 text-dark-gray ls-minus-1px">Seize Global Opportunities with Our Exporter Services</h3>
+                        <!-- start features box item -->
+                        <div class="icon-with-text-style-08 mb-10px">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div class="feature-box-icon feature-box-icon-rounded w-35px h-35px bg-very-light-gray rounded-circle me-15px">
+                                    <i class="fa-solid fa-check fs-12 text-base-color"></i> 
+                                </div>
+                                <div class="feature-box-content"> 
+                                    <span class="text-dark-gray fw-500">Partnership for global market access.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end features box item -->
+                        <!-- start features box item -->
+                        <div class="icon-with-text-style-08 mb-10px">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div class="feature-box-icon feature-box-icon-rounded w-35px h-35px bg-very-light-gray rounded-circle me-15px">
+                                    <i class="fa-solid fa-check fs-12 text-base-color"></i> 
+                                </div>
+                                <div class="feature-box-content"> 
+                                    <span class="text-dark-gray fw-500">Sales enhancement through targeted strategies.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end features box item -->
+                        <!-- start features box item -->
+                        <div class="icon-with-text-style-08 mb-10px">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div class="feature-box-icon feature-box-icon-rounded w-35px h-35px bg-very-light-gray rounded-circle me-15px">
+                                    <i class="fa-solid fa-check fs-12 text-base-color"></i> 
+                                </div>
+                                <div class="feature-box-content"> 
+                                    <span class="text-dark-gray fw-500">Assurance of financial reliability..</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end features box item -->
+                        <!-- start features box item -->
+                        <div class="icon-with-text-style-08">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div class="feature-box-icon feature-box-icon-rounded w-35px h-35px bg-very-light-gray rounded-circle me-15px">
+                                    <i class="fa-solid fa-check fs-12 text-base-color"></i> 
+                                </div>
+                                <div class="feature-box-content"> 
+                                    <span class="text-dark-gray fw-500">Securing steady orders annually.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end features box item -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="pt-0">
+            <div class="container background-no-repeat background-position-top" style="background-image: url('images/index_images/test-bg-1.png')">
+                <div class="row justify-content-center mb-2">
+                    <div class="col-xxl-6 col-lg-8 col-md-9 text-center" data-anime='{ "el": "childs", "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'> 
+                        <h3 class="text-dark-gray fw-700 ls-minus-2px">Trusted by successful partners worldwide.</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center mb-6 sm-mb-8">  
+                    <div class="col-xl-10 position-relative">
+                        <div class="swiper magic-cursor testimonials-style-06" data-slider-options='{ "loop": true, "autoplay": { "delay": 4000, "disableOnInteraction": false }, "keyboard": { "enabled": true, "onlyInViewport": true }, "navigation": { "nextEl": ".swiper-button-next-nav", "prevEl": ".swiper-button-previous-nav", "effect": "fade" } }'>
+                            <div class="swiper-wrapper">
+                                <!-- start testimonial item -->
+                                <div class="swiper-slide">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-8 col-md-4 col-sm-6 text-center md-mb-30px">
+                                            <img alt="" src="images/index_images/test-1.png">
+                                        </div>
+                                        <div class="col-lg-5 col-md-7 last-paragraph-no-margin text-center text-md-start">
+                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">Golden Crop has been our trusted source for premium quality agri commodities for the past two years. Their professionalism and commitment to quality are unparalleled.</span>
+                                            <span class="fs-15 text-uppercase fw-800 text-dark-gray ls-05px">Carlo, United States</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end testimonial item -->
+                                <!-- start testimonial item -->
+                                <div class="swiper-slide">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-8 col-md-4 col-sm-6 text-center md-mb-30px">
+                                            <img alt="" src="images\index_images\test-2.png">
+                                        </div>
+                                        <div class="col-lg-5 col-md-7 last-paragraph-no-margin text-center text-md-start">
+                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">Golden Crop has been a reliable partner for our agri commodity needs. Their commitment to quality assurance gives us peace of mind knowing that we are getting the best products.</span>
+                                            <span class="fs-15 text-uppercase fw-800 text-dark-gray ls-05px">Ahmed, UAE</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end testimonial item -->
+                                <!-- start testimonial item -->
+                                <div class="swiper-slide">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-8 col-md-4 col-sm-6 text-center md-mb-30px">
+                                            <img alt="" src="images\index_images\test-3.png">
+                                        </div>
+                                        <div class="col-lg-5 col-md-7 last-paragraph-no-margin text-center text-md-start">
+                                           
+                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">I had a great experience working with Golden Crop. Their team was professional, knowledgeable, and helped me find the right product at a competitive price. Highly recommended!</span>
+                                            <span class="fs-15 text-uppercase fw-800 text-dark-gray ls-05px">Sarah, Canada</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end testimonial item -->
+                            </div>
+                            <!-- start slider navigation -->
+                            <div class="swiper-button-previous-nav swiper-button-prev md-left-0px"><i class="feather icon-feather-arrow-left icon-extra-medium text-dark-gray"></i></div>
+                            <div class="swiper-button-next-nav swiper-button-next md-right-0px"><i class="feather icon-feather-arrow-right icon-extra-medium text-dark-gray"></i></div>
+                            <!-- end slider pagination -->
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="cover-background one-third-screen sm-h-500px pb-0 position-relative" style="background-image:url('images/index_images/footer-bg.jpg');">
+            <div class="opacity-extra-medium bg-dark-gray"></div> 
+            <div class="container h-100"> 
+                <div class="row align-items-center justify-content-center h-100">
+                    <div class="col-xl-8 col-lg-10 mb-9 md-mb-15 position-relative z-index-1 text-center d-flex flex-wrap align-items-center justify-content-center" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>   
+                        <span class="ps-25px pe-25px pt-5px pb-5px mb-25px text-uppercase text-white fs-12 ls-1px fw-600 border-radius-100px bg-gradient-dark-gray-transparent d-inline-flex align-items-center text-start sm-lh-20"><i class="bi bi-megaphone text-white d-inline-block align-middle icon-small me-10px"></i> PARTNER WITH GOLDEN CROP FOR GLOBAL SUCCESS.</span>
+                        <h1 class="text-white fw-600 ls-minus-2px mb-50px">Achieve worldwide connectivity with our expertise!</h1> 
+                        <a href="#" class="btn btn-extra-large btn-switch-text btn-gradient-purple-pink btn-rounded me-10px">
+                            <span>
+                                <span class="btn-double-text" data-text="Contact us now">Make an enquiry</span>
+                                <span><i class="fa-solid fa-arrow-right"></i></span>
+                            </span>
+                        </a> 
+                    </div>  
+                </div> 
+            </div>
+            <div class="shape-image-animation p-0 w-100 bottom-minus-40px xl-bottom-0px d-none d-md-block"> 
+                <svg xmlns="http://www.w3.org/2000/svg" widht="3000" height="400" viewBox="0 180 2500 200" fill="#ffffff"> 
+                <path class="st1" d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250">
+                <animate
+                    attributeName="d"
+                    dur="5s"
+                    values="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250;
+                            M 0 250 C 400 50 400 400 3000 250 L 3000 550 L 0 550 L 0 250;
+                            M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"
+                    repeatCount="indefinite"
+                    />
+                </path>
+                </svg>
+            </div>
+        </section>
+        <!-- end section -->
+
+        <!-- start footer -->
+        <footer class="p-0 footer-light position-relative"> 
+            <div class="container position-relative"> 
+                <div class="row justify-content-center pt-5 sm-pt-40px" id="footer">
+                    <!-- start footer column -->
+                    <div class="col-12 col-xl-3 col-lg-12 col-sm-6 last-paragraph-n6-margin text-xl-start text-lg-center order-sm-1 lg-mb-50px sm-mb-30px">
+                        <a href="demo-it-business.html" class="footer-logo d-inline-block"> 
+                            <img src="images/logo.svg" data-at2x="images/goldencrop-logo-green@2x.png" alt="">
+                        </a>
+                        <p class="lh-28 w-90 xl-w-100 mx-lg-auto mx-xl-0 pt-2">Food Ingredients sourcing LLP</p>
+                        <div class="elements-social social-icon-style-02 mt-15px">
+                            <ul class="medium-icon dark">
+                                <li class="my-0"><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li class="my-0"><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li> 
+                                <li class="my-0"><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li> 
+                                <li class="my-0"><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li> 
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 xs-mb-30px order-sm-5 order-lg-4">
+
+ <div>
+    <span class="align-middle fw-600 text-dark-gray mb-5px">Head Office</span>
+        <img src="images\country-flag-16X16\India.png" alt="Image description" class="img-fluid align-middle" style="width: 24px; height: 24px;">
+    </div>
+                        
+                        <span class="d-block mb-1px">GCFI Sourcing LLP - India</span>
+                        <span class="d-block mb-1px">68/23, Pillaiyar Koil Str Arani,</span>
+                        <span class="d-block mb-1px">Tiruvannamalai, Tamil Nadu, 632301 India</span>
+                        <span class="d-block mb-1px"><i class="fa-regular fa-envelope"></i><a class="text-dark-gray fw-600" href="mailto:exports@goldencrop.co.in">exports@goldencrop.co.in</a></span>
+                        <span class="d-block mb-1px"><i class="fa fa-phone"></i> <a class="text-dark-gray fw-600" href="tel:+91987654321">+91 987654321</a></span>
+                    </div>
+                    <!-- end footer column --> 
+                    <!-- start footer column -->
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 xs-mb-30px order-sm-5 order-lg-4">
+
+                         <div>
+    <span class="align-middle fw-600 text-dark-gray mb-5px">Branch Office</span>
+        <img src="images\country-flag-16X16\Indonesia.png" alt="Image description" class="img-fluid align-middle" style="width: 24px; height: 24px;">
+    </div>
+                        <span class="d-block mb-1px">GCFI Sourcing LLP - Indonesia</span>
+                        <span class="d-block mb-1px">Jl. M.H. Thamrin No.20</span>
+                        <span class="d-block mb-1px">Jakarta, 10350 Indonesia</span>
+                        <span class="d-block mb-1px"><i class="fa-regular fa-envelope"></i><a class="text-dark-gray fw-600" href="mailto:info@goldencrop.co.in">info@goldencrop.co.in</a></span>
+                        <span class="d-block mb-1px"><i class="fa fa-phone"></i> <a class="text-dark-gray fw-600" href="tel:+6282229557677">+62 (822) 2955-7677</a></span>
+                    </div>
+                    <!-- end footer column --> 
+                    <!-- start footer column -->
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 xs-mb-30px order-sm-5 order-lg-4">
+<div>
+   <span class="align-middle fw-600 text-dark-gray mb-5px">Branch Office</span>
+        <img src="images\country-flag-16X16\Usa.png" alt="Image description" class="img-fluid align-middle" style="width: 24px; height: 24px;">
+    </div>
+                        <span class="d-block mb-1px">GCFI Sourcing LLP - USA</span>
+                        <span class="d-block mb-1px">125 South Wacker Drive</span>
+                        <span class="d-block mb-1px">Chicago, IL, 60606, USA</span>
+                        <span class="d-block mb-1px"><i class="fa-regular fa-envelope"></i><a class="text-dark-gray fw-600" href="mailto:rathi@goldencrop.co.in">rathi@goldencrop.co.in</a></span>
+                        <span class="d-block mb-1px"><i class="fa fa-phone"></i> <a class="text-dark-gray fw-600" href="tel:+12245440220">+1 (224) 544-0220</a></span>
+                    </div>
+                    <!-- end footer column -->                  
+                </div>
+                <div class="row justify-content-center align-items-center pt-7">
+                    <!-- start divider -->
+                    <div class="col-12">
+                        <div class="divider-style-03 divider-style-03-01 border-color-extra-medium-gray"></div>
+                    </div>
+                    <!-- end divider -->
+                    <!-- start copyright -->
+                    <div class="col-lg-5 pt-20px pb-20px md-pt-0 order-2 order-lg-1 text-center text-lg-start last-paragraph-no-margin fs-14">
+                        <p>Proudly Powered by <a href="https://www.xamoza.com/" target="_blank" class="text-dark-gray fw-600 text-decoration-line-bottom">xamoza</a></p></div>
+                    <!-- end copyright -->
+                    <!-- start footer menu -->
+                    <div class="col-lg-7 pt-20px pb-20px md-pt-25px md-pb-5px order-1 order-lg-2 text-center text-lg-end fs-14"><p> All rights reserved &copy; 2024   <b>Goldencrop</b> </p>
+                  <!--       <ul class="footer-navbar sm-lh-normal"> 
+                            <li><a href="#" class="nav-link">Privacy policy</a></li>
+                            <li><a href="#" class="nav-link">Terms and conditions</a></li>
+                            <li><a href="#" class="nav-link">Copyright</a></li>
+                        </ul> -->
+                    </div>
+                    <!-- end footer menu -->
+                </div>
+            </div> 
+        </footer>
+        <!-- end footer -->
+        <!-- start scroll progress -->
+        <div class="scroll-progress d-none d-xxl-block">
+            <a href="#" class="scroll-top" aria-label="scroll">
+                <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+            </a>
+        </div>
+        <!-- end scroll progress -->
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/vendors.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+        <style type="text/css">
+   #secondHeading{
+    margin-top: 60px;
+   }
+@media (max-width: 767px) {
+    .page-title-background-video {
+        padding-top: 50px;
+        padding-bottom: 170px;
+    }
+    #secondHeading {
+    margin-top: 30px;
+}
+}
+
+
+#secondSpan {
+  display: inline-block;
+  line-height: 1em;
+  /* Adjust text color if needed (optional) */
+   background: -webkit-linear-gradient(to right, #23966c, #faaa54);
+    text-shadow:
+1.0px 0px 0px #f1c40f, 2px 2px 2px #40984c;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+#gctext {
+    background: linear-gradient(to right, #72dc0d 20%, #f1c40f 30%, #e4ffa1 70%, #f1c40f 80%);
+    text-shadow:
+1.0px 0px 0px rgba(255, 255, 255, 0.1), 1.5px 0px 2px rgba(255, 255, 255, 0.1)
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+            header .video-container {
+                  z-index: -1;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 100vh;
+                  width: 100vw;
+                }
+                header .video-container video {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: cover;
+                }
+                header .video-container::after {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 100%;
+                  width: 100%;
+                  background-color: rgba(0, 0, 0, 0.82);
+                }
+
+#footer > div > span > i{
+        margin-right: 6px;
+}
+        </style>
+    </body>
 </html>
