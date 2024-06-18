@@ -2883,6 +2883,10 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
   color: var(--dark-gray);
   font-weight: 500;
   font-size: 17px;
+  /*min-height: 430px;*/
+}
+.feature-box-height{
+    min-height: 430px;
 }
 .feature-box-slider .feature-box i {
   font-size: 24px;
@@ -17590,7 +17594,8 @@ canvas {
 }
 
 .portfolio-filter li:hover, .portfolio-filter li.active {
-    background:  #0ebd33;
+        background-image: linear-gradient(to right, #10bb2e, #ff9b29, #10bb2e);
+    background-size: 210% auto;
     color: #dfdfdf;
     border: 1px solid #dfdfdf;
 }
