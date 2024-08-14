@@ -3189,6 +3189,11 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
     06. Background and border
 ====================================== */
 /* Background color */
+
+.bg-gradient-color {
+  background-color: var(--base-color);
+}
+
 .bg-base-color {
   background-color: var(--base-color);
 }
@@ -6627,6 +6632,14 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
 }
 .fw-600 {
   font-weight: 600 !important;
+}
+.ls-0.5{
+      letter-spacing: -0.5px !important;
+}
+
+.fw-600-agri {
+  font-weight: 600 !important;
+    letter-spacing: -7.5px !important;
 }
 .fw-700 {
   font-weight: 700 !important;
