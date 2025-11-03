@@ -121,10 +121,11 @@ color: #fff !important;
             <p data-aos="fade-up" data-aos-delay="200">Coco Peat is THE growing medium which proves to be the irreplaceable sustainable and eco friendly product of all time. </p>
           </div>
           <div class="col-lg-5">
-            <form class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300" id="numberSubmit">
-              <input type="tel" class="form-control" placeholder="Enter your contact Number">
-              <input type="button" class="btn btn-success" id="phone-to-email" value="Get a call" onclick="sendEmail()">
-            </form>
+          <!-- Fixed form with proper ID and event handling -->
+          <form class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300" id="numberSubmit" onsubmit="sendEmail(event)">
+            <input type="tel" class="form-control" id="phone-input" placeholder="Enter your contact Number" required>
+            <input type="submit" class="btn btn-success" value="Get a call">
+          </form>
           </div>
         </div>
       </div>
@@ -815,28 +816,39 @@ color: #fff !important;
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 
   <script type="text/javascript">
-
-//const $formContact = document.querySelector("#numberSubmit");
-
-function sendEmail() { 
-  const currentdate = new Date();
-  const datetime = `on Date & Time: ${currentdate.toLocaleString()}`;  // Use toLocaleString for formatting
-
-  const message = {
-    phone: document.querySelector("#phone-to-email").value,
-    datetime: datetime  // Assign the variable value
-  };
-  Email.send({
-    SecureToken : "a01cf977-a155-49c3-9001-41b0de902882",
-    To : 'manocools@gmail.com',
-    From : "digitaldeliver@gmail.com",
-    Subject : "This is the subject",
-    Body : `${message.phone} enquired on ${message.datetime}`
-}).then(
-  message => alert(message)
-);
-        } 
-      </script> 
+    function sendEmail(event) {
+      // Prevent form from submitting normally
+      event.preventDefault();
+      
+      const currentdate = new Date();
+      const datetime = `on Date & Time: ${currentdate.toLocaleString()}`;
+      
+      // Get the phone number from the input field
+      const phoneNumber = document.getElementById("phone-input").value;
+      
+      // Create the email body
+      const messageBody = `${phoneNumber} enquired ${datetime}`;
+      
+      // Send the email using SMTPJS
+      Email.send({
+        SecureToken: "a01cf977-a155-49c3-9001-41b0de902882",
+        To: 'manocools@gmail.com',
+        From: "digitaldeliver@gmail.com",
+        Subject: "New Enquiry from Green Coco Peat Website",
+        Body: messageBody
+      }).then(
+        message => {
+          if (message === "OK") {
+            alert("Thank you! We'll contact you soon.");
+            // Clear the form
+            document.getElementById("numberSubmit").reset();
+          } else {
+            alert("Something went wrong. Please try again or contact us directly.");
+          }
+        }
+      );
+    }
+  </script>
 
 
 </body>
