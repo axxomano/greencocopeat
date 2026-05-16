@@ -232,7 +232,7 @@ section {
   background-position: center center;
   display: block; /* Ensures it behaves like a block-level element */
   margin: 0; /* Adjust margin as needed */
-  padding: 20px; /* Adjust padding as needed */
+  padding: 40px; /* Adjust padding as needed */
   border: none; /* Removes any default border */
 }
 
@@ -245,7 +245,7 @@ section {
   background-position: center center;
   display: block; /* Ensures it behaves like a block-level element */
   margin: 0; /* Adjust margin as needed */
-  padding: 20px; /* Adjust padding as needed */
+  padding: 40px; /* Adjust padding as needed */
   border: none; /* Removes any default border */
 
 }
