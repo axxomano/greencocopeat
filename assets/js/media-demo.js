@@ -270,7 +270,13 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   gallery.addEventListener('focusout', () => setTimeout(scheduleAutoSlide, 0));
   document.addEventListener('visibilitychange', scheduleAutoSlide);
   reduced.addEventListener('change', scheduleAutoSlide);
-  dialog.addEventListener('close', scheduleAutoSlide);
+  dialog.addEventListener('close', () => {
+    userPaused = false;
+    // Native dialog restores focus to the card; that must not block the requested resume.
+    keyboardInteraction = false;
+    updateAutoButton();
+    scheduleAutoSlide();
+  });
   filmDialog.addEventListener('close', scheduleAutoSlide);
   autoButton.addEventListener('click', () => {
     userPaused = !userPaused;
