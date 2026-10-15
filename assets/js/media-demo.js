@@ -167,6 +167,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   let hovering = false;
   let touching = false;
   let userPaused = false;
+  let keyboardInteraction = false;
   function stopAutoSlide() {
     clearTimeout(autoTimer);
     autoTimer = undefined;
@@ -174,7 +175,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   function canAutoSlide() {
     return galleryVisible && !hovering && !touching && !userPaused &&
       !reduced.matches && !document.hidden && !dialog.open && !filmDialog.open &&
-      !gallery.contains(document.activeElement);
+      !(keyboardInteraction && gallery.contains(document.activeElement));
   }
   function scheduleAutoSlide() {
     stopAutoSlide();
@@ -189,17 +190,27 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
       scheduleAutoSlide();
     }, 3500);
   }
-  gallery.addEventListener('pointerenter', event => {
+  rail.addEventListener('pointerenter', event => {
     if (event.pointerType !== 'touch') { hovering = true; stopAutoSlide(); }
   });
-  gallery.addEventListener('pointerleave', event => {
+  rail.addEventListener('pointerleave', event => {
     if (event.pointerType !== 'touch') { hovering = false; scheduleAutoSlide(); }
   });
   gallery.addEventListener('touchstart', () => { touching = true; stopAutoSlide(); }, {passive:true});
   for (const event of ['touchend', 'touchcancel']) gallery.addEventListener(event, () => {
     touching = false; scheduleAutoSlide();
   }, {passive:true});
-  gallery.addEventListener('focusin', stopAutoSlide);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Tab' || gallery.contains(event.target)) {
+      keyboardInteraction = true;
+      scheduleAutoSlide();
+    }
+  });
+  document.addEventListener('pointerdown', () => {
+    keyboardInteraction = false;
+    scheduleAutoSlide();
+  }, {passive:true});
+  gallery.addEventListener('focusin', scheduleAutoSlide);
   gallery.addEventListener('focusout', () => setTimeout(scheduleAutoSlide, 0));
   gallery.addEventListener('wheel', scheduleAutoSlide, {passive:true});
   document.addEventListener('visibilitychange', scheduleAutoSlide);
@@ -215,6 +226,6 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   new IntersectionObserver(entries => {
     galleryVisible = entries[0].isIntersecting;
     scheduleAutoSlide();
-  }, {threshold:.25}).observe(rail);
+  }, {threshold:0}).observe(rail);
   renderCards();
 })();
