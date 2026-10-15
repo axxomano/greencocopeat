@@ -143,7 +143,10 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
       const expand = document.createElement('span');
       expand.className = 'card-expand';
       expand.setAttribute('aria-hidden', 'true');
-      expand.textContent = '↗';
+      const expandIcon = document.createElement('i');
+      expandIcon.className = 'fa-solid fa-expand';
+      expandIcon.setAttribute('aria-hidden', 'true');
+      expand.append(expandIcon);
       const caption = document.createElement('span');
       caption.className = 'card-caption';
       const category = document.createElement('span');
