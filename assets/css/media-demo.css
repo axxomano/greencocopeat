@@ -65,3 +65,5 @@
 @keyframes front-photo-zoom{from{transform:scale(1)}to{transform:scale(1.085)}}
 @keyframes front-caption-zoom{from{transform:scale(1)}to{transform:scale(1.055)}}
 @media(prefers-reduced-motion:reduce){.journal-card.is-front img,.journal-card.is-front .card-caption{animation:none}}
+
+.gallery-editorial .gallery-arrows button i{font-size:14px;vertical-align:middle}.photo-dialog-bar button i{font-size:12px}
