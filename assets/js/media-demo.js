@@ -9,6 +9,42 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   const filmDialog = $('film-dialog');
   const fullFilm = $('factory-video');
   const filmStatus = $('film-status');
+  const filmTitle = $('film-dialog-title');
+  const filmChapters = [
+    {at: 0, title: 'From coconut. To possibility.'},
+    {at: 7, title: 'A closer look at where it begins.'},
+    {at: 14, title: 'Inside the making of cocopeat.'},
+    {at: 21, title: 'Taking shape. Ready to grow.'},
+    {at: 28, title: 'Your next growing story starts here.'}
+  ];
+  let titleChapter = 0;
+  let titleAnimation;
+  let titleRevision = 0;
+  function resetFilmTitle() {
+    titleRevision++;
+    titleAnimation?.cancel();
+    titleChapter = 0;
+    filmTitle.textContent = filmChapters[0].title;
+  }
+  async function updateFilmTitle() {
+    if (!filmDialog.open) return;
+    let next = 0;
+    filmChapters.forEach((chapter, index) => { if (fullFilm.currentTime >= chapter.at) next = index; });
+    if (next === titleChapter) return;
+    titleChapter = next;
+    const revision = ++titleRevision;
+    titleAnimation?.cancel();
+    if (reduced.matches) { filmTitle.textContent = filmChapters[next].title; return; }
+    titleAnimation = filmTitle.animate([{opacity:1, transform:'translateY(0)'},{opacity:0, transform:'translateY(-5px)'}], {duration:240, easing:'ease-in', fill:'forwards'});
+    try { await titleAnimation.finished; } catch { return; }
+    if (revision !== titleRevision || !filmDialog.open) return;
+    titleAnimation.cancel();
+    filmTitle.textContent = filmChapters[next].title;
+    titleAnimation = filmTitle.animate([{opacity:0, transform:'translateY(7px)'},{opacity:1, transform:'translateY(0)'}], {duration:460, easing:'cubic-bezier(.2,.7,.2,1)'});
+  }
+  fullFilm.addEventListener('timeupdate', updateFilmTitle);
+  fullFilm.addEventListener('seeked', updateFilmTitle);
+
   let advanceAfterFilm = false;
   let backgroundEnabled = !reduced.matches && !navigator.connection?.saveData;
   let heroVisible = true;
@@ -47,6 +83,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   });
   $('watch-process').addEventListener('click', async () => {
     advanceAfterFilm = false;
+    resetFilmTitle();
     filmStatus.textContent = 'Enjoy a closer look. Then continue to our story.';
     hero.pause();
     filmDialog.showModal();
@@ -68,6 +105,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   });
   fullFilm.addEventListener('error', () => { filmStatus.textContent = 'The film could not load. Please close and try again.'; });
   filmDialog.addEventListener('close', () => {
+    resetFilmTitle();
     fullFilm.pause();
     if (advanceAfterFilm) {
       advanceAfterFilm = false;
