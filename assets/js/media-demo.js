@@ -201,11 +201,15 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   const gallery = $('factory-gallery');
   const autoButton = $('gallery-autoplay');
   let autoTimer;
+  let glideDirection = 1;
+  let glidePosition = 0;
+  let lastGlideTime = null;
   let galleryVisible = false;
   let userPaused = false;
   let keyboardInteraction = false;
   function stopAutoSlide() {
-    clearTimeout(autoTimer);
+    cancelAnimationFrame(autoTimer);
+    lastGlideTime = null;
     autoTimer = undefined;
   }
   function canAutoSlide() {
@@ -216,15 +220,25 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   function scheduleAutoSlide() {
     stopAutoSlide();
     if (!canAutoSlide()) return;
-    autoTimer = setTimeout(() => {
-      if (!canAutoSlide()) return;
+    glidePosition = rail.scrollLeft;
+    function glide(timestamp) {
+      if (!canAutoSlide()) { stopAutoSlide(); return; }
+      const elapsed = lastGlideTime === null ? 0 : Math.min((timestamp - lastGlideTime) / 1000, .05);
+      lastGlideTime = timestamp;
       const end = rail.scrollWidth - rail.clientWidth;
       if (end > 2) {
-        if (rail.scrollLeft >= end - 3) rail.scrollTo({left:0, behavior:'smooth'});
-        else scrollCards(1);
+        // Accumulate fractions for equally smooth motion on high-refresh displays.
+        // Ease into each edge, then gently travel back through the collection.
+        const edgeDistance = Math.min(glidePosition, end - glidePosition);
+        const speed = 32 * Math.max(.2, Math.min(1, edgeDistance / 100));
+        glidePosition = Math.max(0, Math.min(end, glidePosition + glideDirection * speed * elapsed));
+        rail.scrollLeft = glidePosition;
+        if (glidePosition >= end) glideDirection = -1;
+        else if (glidePosition <= 0) glideDirection = 1;
       }
-      scheduleAutoSlide();
-    }, 3500);
+      autoTimer = requestAnimationFrame(glide);
+    }
+    autoTimer = requestAnimationFrame(glide);
   }
   function updateAutoButton() {
     autoButton.textContent = userPaused ? 'Resume slideshow' : 'Pause slideshow';
