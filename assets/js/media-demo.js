@@ -132,7 +132,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   }
   function scrollCards(direction) {
     const card = rail.firstElementChild;
-    if (card) rail.scrollBy({left: direction * (card.getBoundingClientRect().width + 20), behavior: reduced.matches ? 'instant' : 'smooth'});
+    if (card) rail.scrollBy({left: direction * (card.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).columnGap)), behavior: reduced.matches ? 'instant' : 'smooth'});
   }
   rail.addEventListener('scroll', updateArrows, {passive:true});
   new ResizeObserver(updateArrows).observe(rail);
@@ -159,5 +159,62 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
     if (event.key === 'ArrowLeft') { event.preventDefault(); movePhoto(-1); }
     if (event.key === 'ArrowRight') { event.preventDefault(); movePhoto(1); }
   });
+  // Advance only while the gallery is visible and the visitor is not interacting.
+  const gallery = $('factory-gallery');
+  const autoButton = $('gallery-autoplay');
+  let autoTimer;
+  let galleryVisible = false;
+  let hovering = false;
+  let touching = false;
+  let userPaused = false;
+  function stopAutoSlide() {
+    clearTimeout(autoTimer);
+    autoTimer = undefined;
+  }
+  function canAutoSlide() {
+    return galleryVisible && !hovering && !touching && !userPaused &&
+      !reduced.matches && !document.hidden && !dialog.open && !filmDialog.open &&
+      !gallery.contains(document.activeElement);
+  }
+  function scheduleAutoSlide() {
+    stopAutoSlide();
+    if (!canAutoSlide()) return;
+    autoTimer = setTimeout(() => {
+      if (!canAutoSlide()) return;
+      const end = rail.scrollWidth - rail.clientWidth;
+      if (end > 2) {
+        if (rail.scrollLeft >= end - 3) rail.scrollTo({left:0, behavior:'smooth'});
+        else scrollCards(1);
+      }
+      scheduleAutoSlide();
+    }, 3500);
+  }
+  gallery.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'touch') { hovering = true; stopAutoSlide(); }
+  });
+  gallery.addEventListener('pointerleave', event => {
+    if (event.pointerType !== 'touch') { hovering = false; scheduleAutoSlide(); }
+  });
+  gallery.addEventListener('touchstart', () => { touching = true; stopAutoSlide(); }, {passive:true});
+  for (const event of ['touchend', 'touchcancel']) gallery.addEventListener(event, () => {
+    touching = false; scheduleAutoSlide();
+  }, {passive:true});
+  gallery.addEventListener('focusin', stopAutoSlide);
+  gallery.addEventListener('focusout', () => setTimeout(scheduleAutoSlide, 0));
+  gallery.addEventListener('wheel', scheduleAutoSlide, {passive:true});
+  document.addEventListener('visibilitychange', scheduleAutoSlide);
+  reduced.addEventListener('change', scheduleAutoSlide);
+  dialog.addEventListener('close', scheduleAutoSlide);
+  filmDialog.addEventListener('close', scheduleAutoSlide);
+  autoButton.addEventListener('click', () => {
+    userPaused = !userPaused;
+    autoButton.textContent = userPaused ? 'Resume slideshow' : 'Pause slideshow';
+    autoButton.setAttribute('aria-pressed', String(userPaused));
+    scheduleAutoSlide();
+  });
+  new IntersectionObserver(entries => {
+    galleryVisible = entries[0].isIntersecting;
+    scheduleAutoSlide();
+  }, {threshold:.25}).observe(rail);
   renderCards();
 })();
