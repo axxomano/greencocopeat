@@ -109,3 +109,12 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   }, {passive:true});
   thumbnails();
 })();
+const fullFilm = document.getElementById('factory-video');
+const fullFilmButton = document.getElementById('film-play');
+fullFilmButton.addEventListener('click', async () => {
+  if (!fullFilm.paused) { fullFilm.pause(); return; }
+  try { await fullFilm.play(); }
+  catch { fullFilmButton.textContent = 'Unable to play — use the video controls to retry'; }
+});
+fullFilm.addEventListener('play', () => { fullFilmButton.textContent = 'Pause film'; });
+fullFilm.addEventListener('pause', () => { fullFilmButton.textContent = '▶ Play full film · 33 sec'; });
