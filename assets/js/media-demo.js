@@ -6,16 +6,28 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   const hero = $('hero-video');
   const motion = $('hero-motion');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const filmDialog = $('film-dialog');
+  const fullFilm = $('factory-video');
+  const filmStatus = $('film-status');
+  let advanceAfterFilm = false;
   let backgroundEnabled = !reduced.matches && !navigator.connection?.saveData;
+  let heroVisible = true;
   function syncMotion() {
-    motion.textContent = hero.paused ? 'Play background' : 'Pause background';
-    motion.setAttribute('aria-pressed', String(!hero.paused));
+    const playing = !hero.paused;
+    motion.classList.toggle('is-playing', playing);
+    motion.setAttribute('aria-label', playing ? 'Pause background video' : 'Play background video');
+    motion.title = playing ? 'Pause background video' : 'Play background video';
   }
   async function playBackground() {
+    if (filmDialog.open || document.hidden) return;
     if (!hero.src) hero.src = hero.dataset.src;
-    try { await hero.play(); } catch { /* The poster remains visible if autoplay is unavailable. */ }
+    try { await hero.play(); } catch { /* Keep the original hero image when playback is unavailable. */ }
     syncMotion();
   }
+  // Reveal only once the browser is actually playing decoded video frames.
+  hero.addEventListener('playing', () => hero.classList.add('is-ready'));
+  hero.addEventListener('error', () => hero.classList.remove('is-ready'));
+  hero.addEventListener('emptied', () => hero.classList.remove('is-ready'));
   hero.addEventListener('play', syncMotion);
   hero.addEventListener('pause', syncMotion);
   motion.addEventListener('click', () => {
@@ -25,16 +37,46 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   reduced.addEventListener('change', () => {
     if (reduced.matches) { backgroundEnabled = false; hero.pause(); }
   });
-  let heroVisible = true;
   new IntersectionObserver(entries => {
     heroVisible = entries[0].isIntersecting;
-    if (heroVisible && backgroundEnabled && !document.hidden) playBackground(); else hero.pause();
+    if (heroVisible && backgroundEnabled && !document.hidden && !filmDialog.open) playBackground(); else hero.pause();
   }, {threshold: .15}).observe(hero);
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) { hero.pause(); $('factory-video').pause(); }
-    else if (heroVisible && backgroundEnabled) playBackground();
+    if (document.hidden) { hero.pause(); fullFilm.pause(); }
+    else if (heroVisible && backgroundEnabled && !filmDialog.open) playBackground();
   });
-  $('factory-video').addEventListener('play', () => hero.pause());
+  $('watch-process').addEventListener('click', async () => {
+    advanceAfterFilm = false;
+    filmStatus.textContent = 'Enjoy a closer look. Then continue to our story.';
+    hero.pause();
+    filmDialog.showModal();
+    fullFilm.currentTime = 0;
+    try { await fullFilm.play(); }
+    catch { if (filmDialog.open) filmStatus.textContent = 'Press play in the video controls to start the film.'; }
+  });
+  $('film-close').addEventListener('click', () => filmDialog.close());
+  filmDialog.addEventListener('click', event => {
+    if (event.target === filmDialog) {
+      const rect = filmDialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) filmDialog.close();
+    }
+  });
+  fullFilm.addEventListener('ended', () => {
+    if (!filmDialog.open) return;
+    advanceAfterFilm = true;
+    filmDialog.close();
+  });
+  fullFilm.addEventListener('error', () => { filmStatus.textContent = 'The film could not load. Please close and try again.'; });
+  filmDialog.addEventListener('close', () => {
+    fullFilm.pause();
+    if (advanceAfterFilm) {
+      advanceAfterFilm = false;
+      const nextSection = $('about');
+      nextSection.setAttribute('tabindex', '-1');
+      nextSection.focus({preventScroll: true});
+      nextSection.scrollIntoView({behavior: reduced.matches ? 'instant' : 'smooth', block: 'start'});
+    } else if (heroVisible && backgroundEnabled && !document.hidden) playBackground();
+  });
   let items = factoryPhotos;
   let current = 0;
   const dialog = $('photo-dialog');
@@ -109,12 +151,3 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   }, {passive:true});
   thumbnails();
 })();
-const fullFilm = document.getElementById('factory-video');
-const fullFilmButton = document.getElementById('film-play');
-fullFilmButton.addEventListener('click', async () => {
-  if (!fullFilm.paused) { fullFilm.pause(); return; }
-  try { await fullFilm.play(); }
-  catch { fullFilmButton.textContent = 'Unable to play — use the video controls to retry'; }
-});
-fullFilm.addEventListener('play', () => { fullFilmButton.textContent = 'Pause film'; });
-fullFilm.addEventListener('pause', () => { fullFilmButton.textContent = '▶ Play full film · 33 sec'; });
