@@ -9,7 +9,7 @@ The live `index.html` and all existing assets are unchanged.
 
 A ten-second, muted factory loop gives the existing hero movement, with a small pause/play icon at the far right and the original hero image visible until playback starts. Reduced-motion and data-saving preferences prevent automatic playback. The background pauses off screen and when the tab is hidden.
 
-The animated Watch our process button opens the complete 33-second film in a modal with native controls and sound. Completing the film closes the modal and scrolls to About; closing it early returns to the hero. After About is a 20-photo gallery with Facility, Production and Products filters, thumbnail navigation, arrows, touch swipe and a fullscreen dialog. Escape closes the viewer; left/right keys navigate it.
+The animated Watch our process button opens the complete 33-second film in a modal with native controls and sound. Completing the film closes the modal and scrolls to About; closing it early returns to the hero. After About is a 20-photo gallery with Facility, Production and Products filters, large staggered photo cards, horizontal scrolling, arrows, native touch swipe and a fullscreen dialog. Escape closes the viewer; left/right keys navigate it.
 
 The user-supplied original photos and video are retained outside this repository. Web derivatives preserve the embedded branding. Photos are at most 1600px along either dimension, with separate 320px thumbnails. The full video loads on demand. No new third-party libraries were added.
 

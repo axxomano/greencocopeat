@@ -80,19 +80,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   let items = factoryPhotos;
   let current = 0;
   const dialog = $('photo-dialog');
-  function render() {
-    const photo = items[current];
-    $('gallery-image').src = base + photo.file + '.webp';
-    $('gallery-image').alt = photo.alt;
-    $('gallery-category').textContent = photo.category;
-    $('gallery-title').textContent = photo.title;
-    $('gallery-count').textContent = `${String(current + 1).padStart(2, '0')} / ${items.length}`;
-    $('gallery-expand').setAttribute('aria-label', `View ${photo.title} in fullscreen`);
-    for (const [i, button] of [...$('gallery-thumbnails').children].entries()) {
-      button.setAttribute('aria-pressed', String(i === current));
-    }
-    if (dialog.open) renderDialog();
-  }
+  const rail = $('gallery-cards');
   function renderDialog() {
     const photo = items[current];
     $('dialog-image').src = base + photo.file + '.webp';
@@ -100,54 +88,76 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
     $('dialog-caption').textContent = photo.title;
     $('dialog-count').textContent = `${current + 1} / ${items.length}`;
   }
-  function move(delta) {
-    current = (current + delta + items.length) % items.length;
-    render();
-    const thumb = $('gallery-thumbnails').children[current];
-    const strip = $('gallery-thumbnails');
-    strip.scrollTo({left: thumb.offsetLeft - strip.offsetLeft - strip.clientWidth / 2 + thumb.clientWidth / 2, behavior: reduced.matches ? 'instant' : 'smooth'});
-  }
-  function thumbnails() {
-    $('gallery-thumbnails').replaceChildren(...items.map((photo, i) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.setAttribute('aria-label', photo.title);
+  function renderCards() {
+    rail.replaceChildren(...items.map((photo, i) => {
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'journal-card';
+      card.setAttribute('aria-label', `View ${photo.title} in fullscreen`);
       const image = document.createElement('img');
-      image.src = base + photo.file + '-thumb.webp';
-      image.alt = '';
+      image.src = base + photo.file + '.webp';
+      image.alt = photo.alt;
       image.loading = 'lazy';
-      image.width = 120; image.height = 85;
-      button.append(image);
-      button.addEventListener('click', () => { current = i; render(); });
-      return button;
+      image.decoding = 'async';
+      const number = document.createElement('span');
+      number.className = 'card-number';
+      number.textContent = String(i + 1).padStart(2, '0');
+      const expand = document.createElement('span');
+      expand.className = 'card-expand';
+      expand.setAttribute('aria-hidden', 'true');
+      expand.textContent = '↗';
+      const caption = document.createElement('span');
+      caption.className = 'card-caption';
+      const category = document.createElement('span');
+      category.className = 'card-category';
+      category.textContent = photo.category;
+      const title = document.createElement('strong');
+      title.textContent = photo.title;
+      caption.append(category, title);
+      card.append(image, number, expand, caption);
+      card.addEventListener('click', () => {
+        current = i;
+        dialog.showModal();
+        renderDialog();
+      });
+      return card;
     }));
-    $('gallery-thumbnails').scrollLeft = 0;
-    render();
+    rail.scrollLeft = 0;
+    $('gallery-count').textContent = `${items.length} photographs to explore`;
+    updateArrows();
   }
+  function updateArrows() {
+    $('gallery-prev').disabled = rail.scrollLeft < 2;
+    $('gallery-next').disabled = rail.scrollLeft >= rail.scrollWidth - rail.clientWidth - 2;
+  }
+  function scrollCards(direction) {
+    const card = rail.firstElementChild;
+    if (card) rail.scrollBy({left: direction * (card.getBoundingClientRect().width + 20), behavior: reduced.matches ? 'instant' : 'smooth'});
+  }
+  rail.addEventListener('scroll', updateArrows, {passive:true});
+  new ResizeObserver(updateArrows).observe(rail);
+  rail.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      scrollCards(event.key === 'ArrowRight' ? 1 : -1);
+    }
+  });
   document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
     document.querySelectorAll('[data-filter]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
     items = factoryPhotos.filter(photo => button.dataset.filter === 'All' || photo.category === button.dataset.filter);
     current = 0;
-    thumbnails();
+    renderCards();
   }));
-  $('gallery-prev').addEventListener('click', () => move(-1));
-  $('gallery-next').addEventListener('click', () => move(1));
-  $('dialog-prev').addEventListener('click', () => move(-1));
-  $('dialog-next').addEventListener('click', () => move(1));
-  $('gallery-expand').addEventListener('click', () => { dialog.showModal(); renderDialog(); });
+  $('gallery-prev').addEventListener('click', () => scrollCards(-1));
+  $('gallery-next').addEventListener('click', () => scrollCards(1));
+  function movePhoto(delta) { current = (current + delta + items.length) % items.length; renderDialog(); }
+  $('dialog-prev').addEventListener('click', () => movePhoto(-1));
+  $('dialog-next').addEventListener('click', () => movePhoto(1));
   $('dialog-close').addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
   dialog.addEventListener('keydown', event => {
-    if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); }
-    if (event.key === 'ArrowRight') { event.preventDefault(); move(1); }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); movePhoto(-1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); movePhoto(1); }
   });
-  let touchStart = null;
-  $('gallery-image').addEventListener('touchstart', e => { touchStart = e.touches[0].clientX; }, {passive:true});
-  $('gallery-image').addEventListener('touchend', e => {
-    if (touchStart === null) return;
-    const delta = e.changedTouches[0].clientX - touchStart;
-    if (Math.abs(delta) > 55) move(delta > 0 ? -1 : 1);
-    touchStart = null;
-  }, {passive:true});
-  thumbnails();
+  renderCards();
 })();
