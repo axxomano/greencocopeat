@@ -7,12 +7,28 @@
 .process-button::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,#fff8 48%,transparent 65%);transform:translateX(-120%);transition:transform .65s ease}
 .process-button:hover{transform:translateY(-3px);box-shadow:0 14px 40px #0004;border-color:#fff}.process-button:hover::after{transform:translateX(120%)}
 .process-play{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;padding-left:3px;border-radius:50%;background:#234f35;color:#fff;font-size:17px;box-shadow:0 0 0 5px #234f3510;animation:process-breathe 2.8s ease-in-out infinite}
-.process-copy{display:flex;flex-direction:column;gap:4px}.process-copy strong{font-size:16px;letter-spacing:.01em}.process-copy small{font-size:10px;color:#4b634c;letter-spacing:.025em}.process-arrow{font-size:24px;margin-left:8px;transition:transform .25s ease}.process-button:hover .process-arrow{transform:translate(3px,-3px)}
+.process-copy{display:flex;flex-direction:column;gap:4px}.process-copy strong{font-size:16px;letter-spacing:.01em}.process-copy small{font-size:10px;color:#4b634c;letter-spacing:.025em}.process-button:hover 
 @keyframes process-breathe{50%{box-shadow:0 0 0 9px #234f350a}}
 #hero-motion.hero-motion-icon{position:absolute;z-index:4;right:24px;bottom:28px;width:42px;height:42px;display:grid;place-items:center;padding:11px;border:1px solid #ffffff80;border-radius:50%;background:#10251966;backdrop-filter:blur(8px);color:#fff;transition:background .2s ease,transform .2s ease}
 #hero-motion.hero-motion-icon:hover{background:#183f2a;transform:scale(1.06)}.hero-motion-icon svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.5;fill:none}.hero-motion-icon .pause-symbol{display:none}.hero-motion-icon.is-playing .pause-symbol{display:block}.hero-motion-icon.is-playing .play-symbol{display:none}
 .process-button:focus-visible,.hero-motion-icon:focus-visible,.film-dialog button:focus-visible{outline:3px solid #bfe58a;outline-offset:5px}
 .film-dialog{padding:0;border:1px solid #ffffff33;border-radius:16px;width:min(1040px,94vw);max-height:94dvh;background:#11291d;color:#fff;box-shadow:0 30px 120px #0008}.film-dialog::backdrop{background:#07130de8;backdrop-filter:blur(9px)}.film-dialog[open]{animation:film-enter .3s ease-out}.film-dialog-heading{padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.film-dialog-heading .media-eyebrow{color:#c0dba0;margin-bottom:7px;font-size:10px}.film-dialog h2{color:#fff;margin:0;font-size:24px}.film-dialog #film-close{border:1px solid #ffffff55;border-radius:50%;color:#fff;background:#ffffff0d;width:40px;height:40px;flex:0 0 40px;font-size:26px;line-height:1}.film-dialog video{display:block;width:100%;max-height:calc(94dvh - 170px);aspect-ratio:16/9;background:#07130d}.film-dialog #film-status{margin:0;padding:16px 28px;font-size:12px;color:#c3cfc4}body:has(#film-dialog[open]){overflow:hidden}#about{scroll-margin-top:140px}#about:focus{outline:none}
 @keyframes film-enter{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
-@media(max-width:767px){.process-button{gap:12px;padding-right:18px}.process-copy strong{font-size:14px}.process-copy small{font-size:9px}.process-arrow{margin-left:0}.film-dialog-heading{padding:20px}.film-dialog h2{font-size:19px}.film-dialog #film-status{padding:16px 20px}#hero-motion.hero-motion-icon{right:16px;bottom:72px;width:36px;height:36px;padding:8px}#about{scroll-margin-top:110px}}
-@media(prefers-reduced-motion:reduce){.hero-film,.process-button,.process-button::after,.process-arrow{transition:none}.process-play,.film-dialog[open]{animation:none}.process-button:hover{transform:none}}
+@media(max-width:767px){.process-button{gap:12px;padding-right:18px}.process-copy strong{font-size:14px}.process-copy small{font-size:9px}.film-dialog-heading{padding:20px}.film-dialog h2{font-size:19px}.film-dialog #film-status{padding:16px 20px}#hero-motion.hero-motion-icon{right:16px;bottom:72px;width:36px;height:36px;padding:8px}#about{scroll-margin-top:110px}}
+@media(prefers-reduced-motion:reduce){.hero-film,.process-button,.process-button::after,.process-play,.film-dialog[open]{animation:none}.process-button:hover{transform:none}}
+
+/* Luminous invitation: a slow glow, moving highlight and play-button ripple. */
+.process-button{isolation:isolate;overflow:visible;border-color:#d8f5a9;background:linear-gradient(115deg,#fffef1 0%,#e5f6bb 45%,#c8ec8d 100%);animation:process-glow 3s ease-in-out infinite;cursor:pointer}
+.process-button::after{inset:0;border-radius:inherit;background:linear-gradient(110deg,transparent 20%,#ffffff00 35%,#ffffffb3 49%,#ffffff00 63%,transparent 80%);background-size:250% 100%;background-position:150% 0;transform:none;animation:process-shimmer 4.5s ease-in-out infinite;transition:none;z-index:0}
+.process-button:hover::after{transform:none;animation-duration:1.8s}
+.process-button:hover,.process-button:focus-visible{transform:translateY(-3px) scale(1.025);border-color:#fff;box-shadow:0 12px 35px #081b2466,0 0 28px #bbf27966;animation:none}
+.process-play,.process-copy{position:relative;z-index:1}
+.process-play{padding:0;background:linear-gradient(145deg,#3a7643,#163c2b);box-shadow:0 4px 12px #173e3433;animation:none;transition:transform .3s ease}
+.process-play svg{width:25px;height:25px;fill:currentColor;transform:translateX(-1px)}
+.process-play::before{content:"";position:absolute;inset:-5px;border:1px solid #477b3a80;border-radius:50%;animation:process-ring 2.4s ease-out infinite;pointer-events:none}
+.process-button:hover .process-play{transform:scale(1.08)}
+@keyframes process-glow{0%,100%{box-shadow:0 8px 26px #0003,0 0 0 1px #dcf8b533,0 0 15px #c8f29020}50%{box-shadow:0 10px 32px #0003,0 0 0 4px #dcf8b51a,0 0 32px #c8f29066}}
+@keyframes process-shimmer{0%,30%{background-position:150% 0}65%,100%{background-position:-100% 0}}
+@keyframes process-ring{0%{transform:scale(.9);opacity:.8}80%,100%{transform:scale(1.35);opacity:0}}
+@media(prefers-reduced-motion:reduce){.process-button,.process-button::after,.process-play::before{animation:none}.process-button::after{display:none}.process-play{transition:none}.process-button:hover,.process-button:focus-visible,.process-button:hover .process-play{transform:none}}
+
