@@ -225,3 +225,10 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   }, {threshold:0}).observe(rail);
   renderCards();
 })();
+
+// Put the caret in the callback field without moving the page or stealing an existing focus.
+window.addEventListener('load', () => {
+  if ((!location.hash || location.hash === '#home') && document.activeElement === document.body) {
+    document.getElementById('phone-input').focus({preventScroll:true});
+  }
+}, {once:true});
