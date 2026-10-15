@@ -230,7 +230,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
         // Accumulate fractions for equally smooth motion on high-refresh displays.
         // Ease into each edge, then gently travel back through the collection.
         const edgeDistance = Math.min(glidePosition, end - glidePosition);
-        const speed = 32 * Math.max(.2, Math.min(1, edgeDistance / 100));
+        const speed = 90 * Math.max(.55, Math.min(1, edgeDistance / 60));
         glidePosition = Math.max(0, Math.min(end, glidePosition + glideDirection * speed * elapsed));
         rail.scrollLeft = glidePosition;
         if (glidePosition >= end) glideDirection = -1;
