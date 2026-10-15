@@ -7,7 +7,7 @@
 .process-button::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,#fff8 48%,transparent 65%);transform:translateX(-120%);transition:transform .65s ease}
 .process-button:hover{transform:translateY(-3px);box-shadow:0 14px 40px #0004;border-color:#fff}.process-button:hover::after{transform:translateX(120%)}
 .process-play{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;padding-left:3px;border-radius:50%;background:#234f35;color:#fff;font-size:17px;box-shadow:0 0 0 5px #234f3510;animation:process-breathe 2.8s ease-in-out infinite}
-.process-copy{display:flex;flex-direction:column;gap:4px}.process-copy strong{font-size:16px;letter-spacing:.01em}.process-copy small{font-size:10px;color:#4b634c;letter-spacing:.025em}.process-button:hover 
+.process-copy{display:flex;flex-direction:column;gap:4px}.process-copy strong{font-size:16px;letter-spacing:.01em}.process-copy small{font-size:10px;color:#4b634c;letter-spacing:.025em}
 @keyframes process-breathe{50%{box-shadow:0 0 0 9px #234f350a}}
 #hero-motion.hero-motion-icon{position:absolute;z-index:4;right:24px;bottom:28px;width:42px;height:42px;display:grid;place-items:center;padding:11px;border:1px solid #ffffff80;border-radius:50%;background:#10251966;backdrop-filter:blur(8px);color:#fff;transition:background .2s ease,transform .2s ease}
 #hero-motion.hero-motion-icon:hover{background:#183f2a;transform:scale(1.06)}.hero-motion-icon svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.5;fill:none}.hero-motion-icon .pause-symbol{display:none}.hero-motion-icon.is-playing .pause-symbol{display:block}.hero-motion-icon.is-playing .play-symbol{display:none}
@@ -31,4 +31,3 @@
 @keyframes process-shimmer{0%,30%{background-position:150% 0}65%,100%{background-position:-100% 0}}
 @keyframes process-ring{0%{transform:scale(.9);opacity:.8}80%,100%{transform:scale(1.35);opacity:0}}
 @media(prefers-reduced-motion:reduce){.process-button,.process-button::after,.process-play::before{animation:none}.process-button::after{display:none}.process-play{transition:none}.process-button:hover,.process-button:focus-visible,.process-button:hover .process-play{transform:none}}
-
