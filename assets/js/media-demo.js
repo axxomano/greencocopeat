@@ -163,17 +163,34 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
     rail.scrollLeft = 0;
     $('gallery-count').textContent = `${items.length} photographs to explore`;
     updateArrows();
+    updateFrontCard();
   }
   function updateArrows() {
     $('gallery-prev').disabled = rail.scrollLeft < 2;
     $('gallery-next').disabled = rail.scrollLeft >= rail.scrollWidth - rail.clientWidth - 2;
   }
-  function scrollCards(direction) {
-    const card = rail.firstElementChild;
-    if (card) rail.scrollBy({left: direction * (card.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).columnGap)), behavior: reduced.matches ? 'instant' : 'smooth'});
+  function cardPositions() {
+    const padding = parseFloat(getComputedStyle(rail).paddingLeft) || 0;
+    const left = rail.getBoundingClientRect().left;
+    return [...rail.children].map(card => Math.max(0, card.getBoundingClientRect().left - left + rail.scrollLeft - padding));
   }
-  rail.addEventListener('scroll', updateArrows, {passive:true});
-  new ResizeObserver(updateArrows).observe(rail);
+  function updateFrontCard() {
+    const positions = cardPositions();
+    let front = 0;
+    positions.forEach((position, i) => {
+      if (Math.abs(position - rail.scrollLeft) < Math.abs(positions[front] - rail.scrollLeft)) front = i;
+    });
+    [...rail.children].forEach((card, i) => card.classList.toggle('is-front', i === front));
+  }
+  function scrollCards(direction) {
+    const positions = cardPositions();
+    const target = direction > 0
+      ? positions.find(position => position > rail.scrollLeft + 3)
+      : positions.filter(position => position < rail.scrollLeft - 3).pop();
+    rail.scrollTo({left:target ?? (direction > 0 ? rail.scrollWidth - rail.clientWidth : 0), behavior:reduced.matches ? 'instant' : 'smooth'});
+  }
+  rail.addEventListener('scroll', () => { updateArrows(); updateFrontCard(); }, {passive:true});
+  new ResizeObserver(() => { updateArrows(); updateFrontCard(); }).observe(rail);
   rail.addEventListener('keydown', event => {
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
       event.preventDefault();
@@ -201,15 +218,11 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   const gallery = $('factory-gallery');
   const autoButton = $('gallery-autoplay');
   let autoTimer;
-  let glideDirection = 1;
-  let glidePosition = 0;
-  let lastGlideTime = null;
   let galleryVisible = false;
   let userPaused = false;
   let keyboardInteraction = false;
   function stopAutoSlide() {
-    cancelAnimationFrame(autoTimer);
-    lastGlideTime = null;
+    clearTimeout(autoTimer);
     autoTimer = undefined;
   }
   function canAutoSlide() {
@@ -220,25 +233,15 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   function scheduleAutoSlide() {
     stopAutoSlide();
     if (!canAutoSlide()) return;
-    glidePosition = rail.scrollLeft;
-    function glide(timestamp) {
-      if (!canAutoSlide()) { stopAutoSlide(); return; }
-      const elapsed = lastGlideTime === null ? 0 : Math.min((timestamp - lastGlideTime) / 1000, .05);
-      lastGlideTime = timestamp;
+    autoTimer = setTimeout(() => {
+      if (!canAutoSlide()) return;
       const end = rail.scrollWidth - rail.clientWidth;
       if (end > 2) {
-        // Accumulate fractions for equally smooth motion on high-refresh displays.
-        // Ease into each edge, then gently travel back through the collection.
-        const edgeDistance = Math.min(glidePosition, end - glidePosition);
-        const speed = 90 * Math.max(.55, Math.min(1, edgeDistance / 60));
-        glidePosition = Math.max(0, Math.min(end, glidePosition + glideDirection * speed * elapsed));
-        rail.scrollLeft = glidePosition;
-        if (glidePosition >= end) glideDirection = -1;
-        else if (glidePosition <= 0) glideDirection = 1;
+        if (rail.scrollLeft >= end - 3) rail.scrollTo({left:0, behavior:'smooth'});
+        else scrollCards(1);
       }
-      autoTimer = requestAnimationFrame(glide);
-    }
-    autoTimer = requestAnimationFrame(glide);
+      scheduleAutoSlide();
+    }, 2500);
   }
   function updateAutoButton() {
     autoButton.textContent = userPaused ? 'Resume slideshow' : 'Pause slideshow';

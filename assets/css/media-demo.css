@@ -57,3 +57,11 @@
 
 /* Continuous gallery movement must not snap back to a card each frame. */
 .gallery-cards{scroll-snap-type:none;scroll-behavior:auto}
+
+/* A gentle photo-and-caption zoom on the front slide. */
+.journal-card.is-front img{animation:front-photo-zoom 2.5s ease-out forwards}
+.journal-card.is-front .card-caption{transform-origin:left bottom;animation:front-caption-zoom 2.5s ease-out forwards}
+.journal-card .card-caption{right:38px}
+@keyframes front-photo-zoom{from{transform:scale(1)}to{transform:scale(1.085)}}
+@keyframes front-caption-zoom{from{transform:scale(1)}to{transform:scale(1.055)}}
+@media(prefers-reduced-motion:reduce){.journal-card.is-front img,.journal-card.is-front .card-caption{animation:none}}
