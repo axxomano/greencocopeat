@@ -164,8 +164,6 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   const autoButton = $('gallery-autoplay');
   let autoTimer;
   let galleryVisible = false;
-  let hovering = false;
-  let touching = false;
   let userPaused = false;
   let keyboardInteraction = false;
   function stopAutoSlide() {
@@ -173,7 +171,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
     autoTimer = undefined;
   }
   function canAutoSlide() {
-    return galleryVisible && !hovering && !touching && !userPaused &&
+    return galleryVisible && !userPaused &&
       !reduced.matches && !document.hidden && !dialog.open && !filmDialog.open &&
       !(keyboardInteraction && gallery.contains(document.activeElement));
   }
@@ -190,16 +188,16 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
       scheduleAutoSlide();
     }, 3500);
   }
-  rail.addEventListener('pointerenter', event => {
-    if (event.pointerType !== 'touch') { hovering = true; stopAutoSlide(); }
+  function updateAutoButton() {
+    autoButton.textContent = userPaused ? 'Resume slideshow' : 'Pause slideshow';
+    autoButton.setAttribute('aria-pressed', String(userPaused));
+  }
+  gallery.addEventListener('click', event => {
+    if (autoButton.contains(event.target)) return;
+    userPaused = true;
+    updateAutoButton();
+    stopAutoSlide();
   });
-  rail.addEventListener('pointerleave', event => {
-    if (event.pointerType !== 'touch') { hovering = false; scheduleAutoSlide(); }
-  });
-  gallery.addEventListener('touchstart', () => { touching = true; stopAutoSlide(); }, {passive:true});
-  for (const event of ['touchend', 'touchcancel']) gallery.addEventListener(event, () => {
-    touching = false; scheduleAutoSlide();
-  }, {passive:true});
   document.addEventListener('keydown', event => {
     if (event.key === 'Tab' || gallery.contains(event.target)) {
       keyboardInteraction = true;
@@ -212,15 +210,13 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   }, {passive:true});
   gallery.addEventListener('focusin', scheduleAutoSlide);
   gallery.addEventListener('focusout', () => setTimeout(scheduleAutoSlide, 0));
-  gallery.addEventListener('wheel', scheduleAutoSlide, {passive:true});
   document.addEventListener('visibilitychange', scheduleAutoSlide);
   reduced.addEventListener('change', scheduleAutoSlide);
   dialog.addEventListener('close', scheduleAutoSlide);
   filmDialog.addEventListener('close', scheduleAutoSlide);
   autoButton.addEventListener('click', () => {
     userPaused = !userPaused;
-    autoButton.textContent = userPaused ? 'Resume slideshow' : 'Pause slideshow';
-    autoButton.setAttribute('aria-pressed', String(userPaused));
+    updateAutoButton();
     scheduleAutoSlide();
   });
   new IntersectionObserver(entries => {
