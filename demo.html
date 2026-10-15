@@ -28,7 +28,9 @@
 
   <!--  Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  <link href="assets/css/media-demo.css?v=4" rel="stylesheet">
+  <link href="assets/css/media-demo.css?v=5" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-Y7L8O9ZpxXpBCHZ1tC9D7n69w1ZleD8C0vG9Fk03wF8v/B+xH9uG2vL8l6b6N+5E3O8M2g===" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <style type="text/css">
   .float{
@@ -125,18 +127,12 @@ color: #fff !important;
            <h2 data-aos="fade-up" data-aos-delay="100">Welcome to the Sustainable future of Agriculture industry.</h2>
 <p data-aos="fade-up" data-aos-delay="200">Operating from India, GreenCocoPeat supplies premium-grade coco peat products and grow bags for eco-friendly agriculture, hydroponics, and horticulture industries across the globe.</p>
           </div>
-          <div class="col-lg-12 hero-media-actions"><button class="process-button" type="button" id="watch-process" aria-haspopup="dialog" aria-controls="film-dialog"><span class="process-play" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 5.8c0-.8.9-1.3 1.6-.9l9.1 6.2c.6.4.6 1.4 0 1.8l-9.1 6.2c-.7.4-1.6-.1-1.6-.9V5.8Z"/></svg></span><span class="process-copy"><strong>Watch our process</strong><small>Inside Green Cocopeat · 33 seconds</small></span></button></div>
-          <div class="col-lg-5">
-          <!-- Fixed form with proper ID and event handling -->
-<form class="sign-up-form d-flex"
-      id="numberSubmit"
-      data-aos="fade-up"
-      data-aos-delay="300"
-      onsubmit="event.preventDefault(); alert('Demo preview: your enquiry was not sent.')">
-  <input type="tel" class="form-control" id="phone-input" placeholder="Enter your contact Number" required>
-  <input type="submit" class="btn btn-success" value="Get a call">
-</form>
-
+          <div class="col-lg-12 hero-media-actions"><button class="process-button" type="button" id="watch-process" aria-haspopup="dialog" aria-controls="film-dialog"><span class="process-play" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 5.8c0-.8.9-1.3 1.6-.9l9.1 6.2c.6.4.6 1.4 0 1.8l-9.1 6.2c-.7.4-1.6-.1-1.6-.9V5.8Z"/></svg></span><span class="process-copy"><strong>Watch our process</strong><small>Inside Green Cocopeat · 33 seconds</small></span></button>
+            <span class="hero-action-divider" aria-hidden="true"></span>
+            <form id="numberSubmit" class="callback-form" onsubmit="event.preventDefault(); alert('Demo preview: your enquiry was not sent.')">
+              <div class="callback-field"><label for="phone-input">Let’s talk growing</label><input type="tel" id="phone-input" name="phone" autocomplete="tel" inputmode="tel" placeholder="Your phone number" required></div>
+              <button type="submit" class="callback-submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a13 13 0 0 1-7-7l2-2-2-5Z"/></svg><span>Call me back</span></button>
+            </form>
           </div>
         </div>
       </div>
@@ -219,7 +215,15 @@ color: #fff !important;
         </div><span id="gallery-count" aria-live="polite">01 / 20</span></div>
         <figure class="gallery-feature">
           <button type="button" id="gallery-expand" aria-label="Open photograph in fullscreen viewer"><img id="gallery-image" src="assets/media/demo/FYS09393.webp" alt="Material handling in the open yard" loading="lazy" width="1600" height="1067"><span class="expand-label">↗ View photograph</span></button>
-          <figcaption><div><span id="gallery-category" class="media-eyebrow">Facility</span><h3 id="gallery-title">A working day at Green Cocopeat</h3></div><div class="gallery-arrows"><button type="button" id="gallery-prev" aria-label="Previous photograph">←</button><button type="button" id="gallery-next" aria-label="Next photograph">→</button></div></figcaption>
+          <figcaption><div><span id="gallery-category" class="media-eyebrow">Facility</span><h3 id="gallery-title">A working day at Green Cocopeat</h3></div><div class="gallery-arrows">
+  <button type="button" id="gallery-prev" aria-label="Previous photograph">
+    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+  </button>
+  <button type="button" id="gallery-next" aria-label="Next photograph">
+    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+  </button>
+</div>
+</figcaption>
         </figure>
         <div id="gallery-thumbnails" class="gallery-thumbnails" role="group" aria-label="Choose a photograph"></div>
         <p class="gallery-hint">20 photographs. One look inside our everyday work. Select a thumbnail or use the arrows to explore.</p>
