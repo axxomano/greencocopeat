@@ -20,13 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('scroll', toggleScrollTop);
 
 
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
-
   const selectBody = document.querySelector('body');
   const selectHeader = document.querySelector('#header');
 

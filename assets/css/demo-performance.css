@@ -3,15 +3,28 @@
 .mobile-nav-toggle {background:transparent; border:0; min-width:44px; min-height:44px; padding:6px;}
 .header .btn-getstarted {background:#247b30; min-height:44px; display:inline-flex; align-items:center;}
 .gallery-footer, .gallery-footer span {color:#4d5d46;}
-.footer h4 {color:#805709;}
+.footer h3 {color:#805709;font-size:16px;font-weight:700;position:relative;padding-bottom:12px;}
+#footer .credits a {color:#247b30;}
+#scroll-top .float, #scroll-top .float:hover {background:#247b30;color:#fff;}
+.about-kicker {margin:0 0 12px;color:#a66d08;font-size:16px;font-weight:700;}
+#features .service-item h3.title {font-size:18px;font-weight:600;}
+#portfolio .portfolio-info h3 {font-size:18px;font-weight:600;padding-right:50px;}
+#team .member-info h3 {font-size:18px;font-weight:700;margin-bottom:6px;}
 :focus-visible {outline:3px solid #b47c12; outline-offset:4px;}
 body:has(dialog[open]) {overflow:hidden;}
 @media(max-width:767px) {
- .hero h1 {font-size:32px;}
- .callback-number-row input, .callback-number-row select {font-size:16px;}
- .float {width:auto; right:68px; padding:8px 14px; height:44px; font-size:14px;}
+ [data-aos] {opacity:1!important;transform:none!important;transition:none!important;}
+ .hero {min-height:100svh;padding:132px 0 38px;}
+ .hero h1 {font-size:clamp(30px,8vw,36px);line-height:1.12;}
+ .hero p {font-size:16px;line-height:1.55;margin-top:12px;}
+ .hero-media-actions {margin-top:20px;gap:16px;}
+ .process-button {min-height:56px;}
+ .gallery-cards {scrollbar-width:none;}
+ .gallery-cards::-webkit-scrollbar {display:none;}
+ .gallery-editorial .gallery-filters button, .gallery-arrows button {min-height:44px;}
+ .float {width:auto;right:68px;padding:8px 14px;height:44px;font-size:14px;}
 }
 @media(prefers-reduced-motion:reduce) {
- [data-aos] {opacity:1!important; transform:none!important; transition:none!important;}
+ [data-aos] {opacity:1!important;transform:none!important;transition:none!important;}
  html {scroll-behavior:auto!important;}
 }

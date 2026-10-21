@@ -139,7 +139,6 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
       const card = document.createElement('button');
       card.type = 'button';
       card.className = 'journal-card';
-      card.setAttribute('aria-label', `${String(i + 1).padStart(2, '0')} ${photo.category} ${photo.title} — view in fullscreen`);
       const image = document.createElement('img');
       image.src = base + photo.file + '-card.webp';
       image.alt = photo.alt;
