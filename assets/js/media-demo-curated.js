@@ -46,8 +46,15 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   fullFilm.addEventListener('seeked', updateFilmTitle);
 
   let advanceAfterFilm = false;
-  let backgroundEnabled = !reduced.matches && !navigator.connection?.saveData;
+  let backgroundEnabled = !reduced.matches && !navigator.connection?.saveData && !window.matchMedia('(max-width: 767px)').matches;
   let heroVisible = true;
+  let backgroundReady = false;
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      backgroundReady = true;
+      if (heroVisible && backgroundEnabled) playBackground();
+    }, 1500);
+  }, {once:true});
   function syncMotion() {
     const playing = !hero.paused;
     motion.classList.toggle('is-playing', playing);
@@ -55,7 +62,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
     motion.title = playing ? 'Pause background video' : 'Play background video';
   }
   async function playBackground() {
-    if (filmDialog.open || document.hidden) return;
+    if (!backgroundReady || filmDialog.open || document.hidden) return;
     if (!hero.src) hero.src = hero.dataset.src;
     try { await hero.play(); } catch { /* Keep the original hero image when playback is unavailable. */ }
     syncMotion();
@@ -67,6 +74,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
   hero.addEventListener('play', syncMotion);
   hero.addEventListener('pause', syncMotion);
   motion.addEventListener('click', () => {
+    backgroundReady = true;
     backgroundEnabled = hero.paused;
     if (backgroundEnabled) playBackground(); else hero.pause();
   });
@@ -131,9 +139,9 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
       const card = document.createElement('button');
       card.type = 'button';
       card.className = 'journal-card';
-      card.setAttribute('aria-label', `View ${photo.title} in fullscreen`);
+      card.setAttribute('aria-label', `${String(i + 1).padStart(2, '0')} ${photo.category} ${photo.title} — view in fullscreen`);
       const image = document.createElement('img');
-      image.src = base + photo.file + '.webp';
+      image.src = base + photo.file + '-card.webp';
       image.alt = photo.alt;
       image.loading = 'lazy';
       image.decoding = 'async';
@@ -192,7 +200,13 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
       : positions.filter(position => position < rail.scrollLeft - 3).pop();
     rail.scrollTo({left:target ?? (direction > 0 ? rail.scrollWidth - rail.clientWidth : 0), behavior:reduced.matches ? 'instant' : 'smooth'});
   }
-  rail.addEventListener('scroll', () => { updateArrows(); updateFrontCard(); }, {passive:true});
+  let scrollFrame;
+  rail.addEventListener('scroll', () => {
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = null; updateArrows(); updateFrontCard();
+    });
+  }, {passive:true});
   new ResizeObserver(() => { updateArrows(); updateFrontCard(); }).observe(rail);
   rail.addEventListener('keydown', event => {
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
@@ -200,8 +214,8 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
       scrollCards(event.key === 'ArrowRight' ? 1 : -1);
     }
   });
-  document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
-    document.querySelectorAll('[data-filter]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+  document.querySelectorAll('#factory-gallery [data-filter]').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('#factory-gallery [data-filter]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
     items = factoryPhotos.filter(photo => button.dataset.filter === 'All' || photo.category === button.dataset.filter);
     current = 0;
     renderCards();
@@ -292,7 +306,7 @@ const factoryPhotos = [{"file": "FYS09393", "category": "Facility", "title": "A 
 
 // Put the caret in the callback field without moving the page or stealing an existing focus.
 window.addEventListener('load', () => {
-  if ((!location.hash || location.hash === '#home') && document.activeElement === document.body) {
+  if (window.matchMedia('(pointer: fine)').matches && (!location.hash || location.hash === '#home') && document.activeElement === document.body) {
     document.getElementById('phone-input').focus({preventScroll:true});
   }
 }, {once:true});
