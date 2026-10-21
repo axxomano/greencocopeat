@@ -1,0 +1,17 @@
+/* Demo-only loading and usability refinements. */
+.hero h1 {font-size:44px; font-weight:700; color:#fff; margin:0;}
+.mobile-nav-toggle {background:transparent; border:0; min-width:44px; min-height:44px; padding:6px;}
+.header .btn-getstarted {background:#247b30; min-height:44px; display:inline-flex; align-items:center;}
+.gallery-footer, .gallery-footer span {color:#4d5d46;}
+.footer h4 {color:#805709;}
+:focus-visible {outline:3px solid #b47c12; outline-offset:4px;}
+body:has(dialog[open]) {overflow:hidden;}
+@media(max-width:767px) {
+ .hero h1 {font-size:32px;}
+ .callback-number-row input, .callback-number-row select {font-size:16px;}
+ .float {width:auto; right:68px; padding:8px 14px; height:44px; font-size:14px;}
+}
+@media(prefers-reduced-motion:reduce) {
+ [data-aos] {opacity:1!important; transform:none!important; transition:none!important;}
+ html {scroll-behavior:auto!important;}
+}
