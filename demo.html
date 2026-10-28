@@ -87,6 +87,7 @@ color: #fff !important;
         <ul>
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#factory-gallery">Journal</a></li>
           <li class="dropdown has-dropdown"><a href="#products"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
             <ul class="dd-box-shadow">
               <li><a href="#cocoblocks">Coco Blocks</a></li>
@@ -100,7 +101,6 @@ color: #fff !important;
             </ul>
           </li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#factory-gallery">Gallery</a></li>
           <li><a href="#team">Team</a></li>
           
           <li><a href="#contact">Contact</a></li>
@@ -207,16 +207,16 @@ color: #fff !important;
     </dialog>
     <section id="factory-gallery" class="factory-gallery gallery-editorial">
       <div class="container">
-        <div class="gallery-intro"><div><span class="media-eyebrow">THE GREEN COCOPEAT JOURNAL</span><h2>Rooted in nature.<br><em>Made with purpose.</em></h2></div><p>A window into our world. Discover the spaces, processes and textures behind every block.</p></div>
-        <div class="gallery-toolbar"><div class="gallery-filters" role="group" aria-label="Filter factory photographs">
+        <div class="gallery-intro" data-aos="fade-up"><div><span class="media-eyebrow">THE GREEN COCOPEAT JOURNAL</span><h2>Rooted in nature.<br><em>Made with purpose.</em></h2></div><p>A window into our world. Discover the spaces, processes and textures behind every block.</p></div>
+        <div class="gallery-toolbar" data-aos="fade-up" data-aos-delay="120"><div class="gallery-filters" role="group" aria-label="Filter factory photographs">
           <button type="button" data-filter="All" aria-pressed="true">Explore all <sup>15</sup></button>
           <button type="button" data-filter="Facility" aria-pressed="false">Our spaces <sup>04</sup></button>
           <button type="button" data-filter="Production" aria-pressed="false">The process <sup>04</sup></button>
           <button type="button" data-filter="Products" aria-pressed="false">The details <sup>07</sup></button>
         </div><div class="gallery-arrows"><button type="button" id="gallery-autoplay" aria-pressed="false">Pause slideshow</button><button type="button" id="gallery-prev" aria-label="Previous photographs"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button><button type="button" id="gallery-next" aria-label="Next photographs"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button></div></div>
       </div>
-      <div id="gallery-cards" class="gallery-cards" role="region" aria-label="Factory photo collection" tabindex="0"></div>
-      <div class="container gallery-footer"><span id="gallery-count" aria-live="polite">15 photographs to explore</span><span>Scroll to discover <span aria-hidden="true">⟶</span></span></div>
+      <div id="gallery-cards" class="gallery-cards" role="region" aria-label="Factory photo collection" tabindex="0" data-aos="fade-up" data-aos-delay="200"></div>
+      <div class="container gallery-footer" data-aos="fade-up" data-aos-delay="260"><span id="gallery-count" aria-live="polite">15 photographs to explore</span><span>Scroll to discover <span aria-hidden="true">⟶</span></span></div>
       <noscript><p class="container"><a href="assets/media/demo/FYS09393.webp">View a photograph from our facility</a></p></noscript>
     </section>
     <dialog id="photo-dialog" aria-label="Factory photograph viewer"><div class="photo-dialog-bar"><span id="dialog-count"></span><button type="button" id="dialog-close" aria-label="Close photograph viewer">Close ×</button></div><img id="dialog-image" alt=""><div class="photo-dialog-bar"><button type="button" id="dialog-prev" aria-label="Previous fullscreen photograph"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Previous</button><span id="dialog-caption"></span><button type="button" id="dialog-next" aria-label="Next fullscreen photograph">Next <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button></div></dialog>
