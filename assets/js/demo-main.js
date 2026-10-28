@@ -58,9 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
     const open = document.body.classList.contains('mobile-nav-active');
+    mobileNavToggleBtn.querySelector('svg').innerHTML = open
+      ? '<path d="M5 5l14 14M19 5L5 19"/>'
+      : '<path d="M3 6h18M3 12h18M3 18h18"/>';
     mobileNavToggleBtn.setAttribute('aria-expanded', String(open));
     mobileNavToggleBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   }
